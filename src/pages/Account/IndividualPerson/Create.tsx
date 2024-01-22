@@ -1,12 +1,12 @@
 import { useState } from 'react';
-import { CreateIndividualPersonAccount } from './../../api/SistemaBancarioBackend';
-import { IIndividualPersonAccount } from './../../interfaces/IndividualPersonAccount'
+import { CreateIndividualPersonAccount } from '../../../api/SistemaBancarioBackend';
+import { IIndividualPersonAccount } from '../../../interfaces/IndividualPersonAccount'
 
 const Create = () => {
   const [name, setName] = useState("")
   const [cpf, setCpf] = useState("")
   const [rg, setRg] = useState("")
-  const [birth, setBirth] = useState(new Date())
+  const [birth, setBirth] = useState<Date | undefined>(new Date()) 
   const [password, setPassword] = useState("")
   const [accountType, setAccountType] = useState("CORRENTE")
   const [agencyCode, setAgencyCode] = useState("001")
@@ -32,7 +32,7 @@ const Create = () => {
       <input type="text" name="rg" value={rg} onChange={(e) => setRg(e.target.value)}/>
 
       <label htmlFor="birth">Nascimento: </label>
-      <input type="date" name="birth" value={birth} onChange={(e) => setBirth(e.target.value)}/>
+      <input type="date" name="birth" value={birth as unknown as string} onChange={(e) => setBirth(e.target.value as unknown as Date)}/>
 
       <label htmlFor="password">Senha: </label>
       <input type="password" name="password" value={password} onChange={(e) => setPassword(e.target.value)}/>
