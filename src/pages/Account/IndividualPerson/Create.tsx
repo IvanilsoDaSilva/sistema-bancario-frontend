@@ -1,44 +1,80 @@
-import { useState } from 'react';
-import { CreateIndividualPersonAccount } from '../../../api/SistemaBancarioBackend';
-import { IIndividualPersonAccount } from '../../../interfaces/IndividualPersonAccount'
+import { useState } from "react";
+import { CreateIndividualPersonAccount } from "../../../api/SistemaBancarioBackend";
+import { IIndividualPersonAccount } from "../../../interfaces/IndividualPersonAccount";
 
 const Create = () => {
-  const [name, setName] = useState("")
-  const [cpf, setCpf] = useState("")
-  const [rg, setRg] = useState("")
-  const [birth, setBirth] = useState<Date | undefined>(new Date()) 
-  const [password, setPassword] = useState("")
-  const [accountType, setAccountType] = useState("CORRENTE")
-  const [agencyCode, setAgencyCode] = useState("001")
+  const [name, setName] = useState("");
+  const [cpf, setCpf] = useState("");
+  const [rg, setRg] = useState("");
+  const [birth, setBirth] = useState<Date | undefined>(new Date());
+  const [password, setPassword] = useState("");
+  const [accountType, setAccountType] = useState("CORRENTE");
+  const [agencyCode, setAgencyCode] = useState("001");
 
-  const CreateIndividualPersonAccountFunction = async (e: { preventDefault: () => void }) => {
-    e.preventDefault()
+  const CreateIndividualPersonAccountFunction = async (e: {
+    preventDefault: () => void;
+  }) => {
+    e.preventDefault();
 
-    await CreateIndividualPersonAccount({name, cpf, rg, birth ,password, accountType, agencyCode} as IIndividualPersonAccount)
-  }
+    await CreateIndividualPersonAccount({
+      name,
+      cpf,
+      rg,
+      birth,
+      password,
+      accountType,
+      agencyCode,
+    } as IIndividualPersonAccount);
+  };
 
   return (
-    <form
-      method='POST'
-      onSubmit={CreateIndividualPersonAccountFunction}
-    >
+    <form method="POST" onSubmit={CreateIndividualPersonAccountFunction}>
       <label htmlFor="name">Nome: </label>
-      <input type="text" name="name" value={name} onChange={(e) => setName(e.target.value)}/>
+      <input
+        type="text"
+        name="name"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+      />
 
       <label htmlFor="cpf">CPF: </label>
-      <input type="text" name="cpf" value={cpf} onChange={(e) => setCpf(e.target.value)}/>
+      <input
+        type="text"
+        name="cpf"
+        value={cpf}
+        onChange={(e) => setCpf(e.target.value)}
+      />
 
       <label htmlFor="rg">RG: </label>
-      <input type="text" name="rg" value={rg} onChange={(e) => setRg(e.target.value)}/>
+      <input
+        type="text"
+        name="rg"
+        value={rg}
+        onChange={(e) => setRg(e.target.value)}
+      />
 
       <label htmlFor="birth">Nascimento: </label>
-      <input type="date" name="birth" value={birth as unknown as string} onChange={(e) => setBirth(e.target.value as unknown as Date)}/>
+      <input
+        type="date"
+        name="birth"
+        value={birth as unknown as string}
+        onChange={(e) => setBirth(e.target.value as unknown as Date)}
+      />
 
       <label htmlFor="password">Senha: </label>
-      <input type="password" name="password" value={password} onChange={(e) => setPassword(e.target.value)}/>
+      <input
+        type="password"
+        name="password"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+      />
 
       <label htmlFor="accountType">Tipo da conta:</label>
-      <select name="accountType" value={accountType} onChange={(e) => setAccountType(e.target.value)}>
+      <select
+        name="accountType"
+        value={accountType}
+        onChange={(e) => setAccountType(e.target.value)}
+      >
         <option value="CORRENTE">CORRENTE</option>
         <option value="POUPANCA">POUPANCA</option>
         <option value="PAGAMENTOS">PAGAMENTOS</option>
@@ -46,7 +82,11 @@ const Create = () => {
       </select>
 
       <label htmlFor="agencyCode">Código da agência: </label>
-      <select name="agencyCode" value={agencyCode} onChange={(e) => setAgencyCode(e.target.value)}>
+      <select
+        name="agencyCode"
+        value={agencyCode}
+        onChange={(e) => setAgencyCode(e.target.value)}
+      >
         <option value="001">001</option>
         <option value="014">014</option>
         <option value="055">055</option>
@@ -56,6 +96,6 @@ const Create = () => {
       <button type="submit">Enviar</button>
     </form>
   );
-}
+};
 
 export default Create;

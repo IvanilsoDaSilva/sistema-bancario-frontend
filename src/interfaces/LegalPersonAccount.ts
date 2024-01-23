@@ -1,8 +1,8 @@
 export interface ILegalPersonAccount {
-    razaoSocial:string,
-	cnpj:string,
+  companyName: string;
+  cnpj: string;
 
-    password:string,
-    accountType:string,
-    agencyCode:string
+  password: string;
+  accountType: string;
+  agencyCode: string;
 }
