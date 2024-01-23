@@ -4,6 +4,7 @@ export interface IIndividualPersonAccount {
   rg: string;
   birth: Date;
 
+  number: string;
   password: string;
   accountType: string;
   agencyCode: string;

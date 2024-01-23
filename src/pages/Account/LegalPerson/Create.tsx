@@ -1,8 +1,10 @@
 import { useState } from "react";
+import { useNavigate } from 'react-router-dom'
 import { CreateLegalPersonAccount } from "../../../api/SistemaBancarioBackend";
 import { ILegalPersonAccount } from "../../../interfaces/LegalPersonAccount";
 
 const Create = () => {
+  const navigate = useNavigate()
   const [companyName, setCompanyName] = useState<string|null>(null);
   const [cnpj, setCnpj] = useState<string|null>(null);
   const [password, setPassword] = useState<string|null>(null);
@@ -16,13 +18,17 @@ const Create = () => {
   }) => {
     e.preventDefault();
 
-    await CreateLegalPersonAccount({
+    const response = await CreateLegalPersonAccount({
       companyName,
       cnpj,
       password,
       accountType,
       agencyCode,
-    } as ILegalPersonAccount).then(e => setHttpStatus(e.status.toString()));
+    } as ILegalPersonAccount);
+    setHttpStatus(response.status.toString())
+
+    response.json().then(i => console.log(i))
+    // if(response.status == 201) navigate('/')
   };
 
   return (
@@ -33,7 +39,7 @@ const Create = () => {
         <input
           type="text"
           name="companyName"
-          value={companyName}
+          value={companyName as string}
           onChange={(e) => setCompanyName(e.target.value)}
         />
 
@@ -41,7 +47,7 @@ const Create = () => {
         <input
           type="text"
           name="cnpj"
-          value={cnpj}
+          value={cnpj as string}
           onChange={(e) => setCnpj(e.target.value)}
         />
 
@@ -49,7 +55,7 @@ const Create = () => {
         <input
           type="password"
           name="password"
-          value={password}
+          value={password as string}
           onChange={(e) => setPassword(e.target.value)}
         />
 

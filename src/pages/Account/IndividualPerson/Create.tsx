@@ -1,8 +1,10 @@
 import { useState } from "react";
+import { useNavigate } from 'react-router-dom'
 import { CreateIndividualPersonAccount } from "../../../api/SistemaBancarioBackend";
 import { IIndividualPersonAccount } from "../../../interfaces/IndividualPersonAccount";
 
 const Create = () => {
+  const navigate = useNavigate()
   const [name, setName] = useState<string|null>(null);
   const [cpf, setCpf] = useState<string|null>(null);
   const [rg, setRg] = useState<string|null>(null);
@@ -16,7 +18,7 @@ const Create = () => {
   const CreateIndividualPersonAccountFunction = async (e: {preventDefault: () => void;}) => {
     e.preventDefault();
 
-    await CreateIndividualPersonAccount({
+    const response = await CreateIndividualPersonAccount({
       name,
       cpf,
       rg,
@@ -24,7 +26,12 @@ const Create = () => {
       password,
       accountType,
       agencyCode,
-    } as IIndividualPersonAccount).then(e => setHttpStatus(e.status.toString()));
+    } as IIndividualPersonAccount);
+    setHttpStatus(response.status.toString())
+
+    response.json().then(i => console.log(i))
+    // if(response.status == 201) navigate('/')
+    
   };
 
   return (
@@ -35,7 +42,7 @@ const Create = () => {
         <input
           type="text"
           name="name"
-          value={name}
+          value={name as string}
           onChange={(e) => setName(e.target.value)}
         />
 
@@ -43,7 +50,7 @@ const Create = () => {
         <input
           type="text"
           name="cpf"
-          value={cpf}
+          value={cpf as string}
           onChange={(e) => setCpf(e.target.value)}
         />
 
@@ -51,7 +58,7 @@ const Create = () => {
         <input
           type="text"
           name="rg"
-          value={rg}
+          value={rg as string}
           onChange={(e) => setRg(e.target.value)}
         />
 
@@ -67,7 +74,7 @@ const Create = () => {
         <input
           type="password"
           name="password"
-          value={password}
+          value={password as string}
           onChange={(e) => setPassword(e.target.value)}
         />
 
