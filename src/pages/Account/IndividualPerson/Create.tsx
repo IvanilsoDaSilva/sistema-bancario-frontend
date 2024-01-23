@@ -3,17 +3,17 @@ import { CreateIndividualPersonAccount } from "../../../api/SistemaBancarioBacke
 import { IIndividualPersonAccount } from "../../../interfaces/IndividualPersonAccount";
 
 const Create = () => {
-  const [name, setName] = useState("");
-  const [cpf, setCpf] = useState("");
-  const [rg, setRg] = useState("");
-  const [birth, setBirth] = useState<Date | undefined>(new Date());
-  const [password, setPassword] = useState("");
+  const [name, setName] = useState<string|null>(null);
+  const [cpf, setCpf] = useState<string|null>(null);
+  const [rg, setRg] = useState<string|null>(null);
+  const [birth, setBirth] = useState<Date | null>(new Date());
+  const [password, setPassword] = useState<string|null>(null);
   const [accountType, setAccountType] = useState("CORRENTE");
   const [agencyCode, setAgencyCode] = useState("001");
 
-  const CreateIndividualPersonAccountFunction = async (e: {
-    preventDefault: () => void;
-  }) => {
+  const [httpStatus, setHttpStatus] = useState("");
+
+  const CreateIndividualPersonAccountFunction = async (e: {preventDefault: () => void;}) => {
     e.preventDefault();
 
     await CreateIndividualPersonAccount({
@@ -24,77 +24,80 @@ const Create = () => {
       password,
       accountType,
       agencyCode,
-    } as IIndividualPersonAccount);
+    } as IIndividualPersonAccount).then(e => setHttpStatus(e.status.toString()));
   };
 
   return (
-    <form method="POST" onSubmit={CreateIndividualPersonAccountFunction}>
-      <label htmlFor="name">Nome: </label>
-      <input
-        type="text"
-        name="name"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-      />
+    <>
+      <p>{httpStatus}</p>
+      <form method="POST" onSubmit={CreateIndividualPersonAccountFunction}>
+        <label htmlFor="name">Nome: </label>
+        <input
+          type="text"
+          name="name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
 
-      <label htmlFor="cpf">CPF: </label>
-      <input
-        type="text"
-        name="cpf"
-        value={cpf}
-        onChange={(e) => setCpf(e.target.value)}
-      />
+        <label htmlFor="cpf">CPF: </label>
+        <input
+          type="text"
+          name="cpf"
+          value={cpf}
+          onChange={(e) => setCpf(e.target.value)}
+        />
 
-      <label htmlFor="rg">RG: </label>
-      <input
-        type="text"
-        name="rg"
-        value={rg}
-        onChange={(e) => setRg(e.target.value)}
-      />
+        <label htmlFor="rg">RG: </label>
+        <input
+          type="text"
+          name="rg"
+          value={rg}
+          onChange={(e) => setRg(e.target.value)}
+        />
 
-      <label htmlFor="birth">Nascimento: </label>
-      <input
-        type="date"
-        name="birth"
-        value={birth as unknown as string}
-        onChange={(e) => setBirth(e.target.value as unknown as Date)}
-      />
+        <label htmlFor="birth">Nascimento: </label>
+        <input
+          type="date"
+          name="birth"
+          value={birth as unknown as string}
+          onChange={(e) => setBirth(e.target.value as unknown as Date)}
+        />
 
-      <label htmlFor="password">Senha: </label>
-      <input
-        type="password"
-        name="password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
+        <label htmlFor="password">Senha: </label>
+        <input
+          type="password"
+          name="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
 
-      <label htmlFor="accountType">Tipo da conta:</label>
-      <select
-        name="accountType"
-        value={accountType}
-        onChange={(e) => setAccountType(e.target.value)}
-      >
-        <option value="CORRENTE">CORRENTE</option>
-        <option value="POUPANCA">POUPANCA</option>
-        <option value="PAGAMENTOS">PAGAMENTOS</option>
-        <option value="UNIVERSITARIA">UNIVERSITARIA</option>
-      </select>
+        <label htmlFor="accountType">Tipo da conta:</label>
+        <select
+          name="accountType"
+          value={accountType}
+          onChange={(e) => setAccountType(e.target.value)}
+        >
+          <option value="CORRENTE">CORRENTE</option>
+          <option value="POUPANCA">POUPANCA</option>
+          <option value="PAGAMENTOS">PAGAMENTOS</option>
+          <option value="UNIVERSITARIA">UNIVERSITARIA</option>
+        </select>
 
-      <label htmlFor="agencyCode">Código da agência: </label>
-      <select
-        name="agencyCode"
-        value={agencyCode}
-        onChange={(e) => setAgencyCode(e.target.value)}
-      >
-        <option value="001">001</option>
-        <option value="014">014</option>
-        <option value="055">055</option>
-        <option value="666">666</option>
-      </select>
+        <label htmlFor="agencyCode">Código da agência: </label>
+        <select
+          name="agencyCode"
+          value={agencyCode}
+          onChange={(e) => setAgencyCode(e.target.value)}
+        >
+          <option value="001">001</option>
+          <option value="014">014</option>
+          <option value="055">055</option>
+          <option value="666">666</option>
+        </select>
 
-      <button type="submit">Enviar</button>
-    </form>
+        <button type="submit">Enviar</button>
+      </form>
+    </>
   );
 };
 
