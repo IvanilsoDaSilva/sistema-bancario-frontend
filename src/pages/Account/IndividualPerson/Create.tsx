@@ -5,6 +5,7 @@ import { IIndividualPersonAccount } from "../../../interfaces/IndividualPersonAc
 
 const Create = () => {
   const navigate = useNavigate()
+  
   const [name, setName] = useState<string|null>(null);
   const [cpf, setCpf] = useState<string|null>(null);
   const [rg, setRg] = useState<string|null>(null);
@@ -15,7 +16,7 @@ const Create = () => {
 
   const [httpStatus, setHttpStatus] = useState("");
 
-  const CreateIndividualPersonAccountFunction = async (e: {preventDefault: () => void;}) => {
+  const handle = async (e: {preventDefault: () => void;}) => {
     e.preventDefault();
 
     const response = await CreateIndividualPersonAccount({
@@ -29,15 +30,21 @@ const Create = () => {
     } as IIndividualPersonAccount);
     setHttpStatus(response.status.toString())
 
-    response.json().then(i => console.log(i))
-    // if(response.status == 201) navigate('/')
+    if(response.status == 201) {
+      response.json().then(i => navigate('/account/individual-person/read', {state: i}))
+    }
     
   };
 
   return (
     <>
+      <ol>
+        <ul>
+          <a href="/account">Voltar</a>
+        </ul>
+      </ol>
       <p>{httpStatus}</p>
-      <form method="POST" onSubmit={CreateIndividualPersonAccountFunction}>
+      <form method="POST" onSubmit={handle}>
         <label htmlFor="name">Nome: </label>
         <input
           type="text"

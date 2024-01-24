@@ -5,7 +5,9 @@ import Account from "./pages/Account/Index";
 import IndividualPersonAccount from "./pages/Account/IndividualPerson/Index";
 import LegalPersonAccount from "./pages/Account/LegalPerson/Index";
 import IndividualPersonAccountCreate from "./pages/Account/IndividualPerson/Create";
+import IndividualPersonAccountRead from "./pages/Account/IndividualPerson/Read";
 import LegalPersonAccountCreate from "./pages/Account/LegalPerson/Create";
+import LegalPersonAccountRead from "./pages/Account/LegalPerson/Read";
 
 function App() {
   return (
@@ -27,8 +29,16 @@ function App() {
             element={<IndividualPersonAccountCreate />}
           />
           <Route
+            path="/account/individual-person/read"
+            element={<IndividualPersonAccountRead />}
+          />
+          <Route
             path="/account/legal-person/create"
             element={<LegalPersonAccountCreate />}
+          />
+          <Route
+            path="/account/legal-person/read"
+            element={<LegalPersonAccountRead />}
           />
         </Routes>
       </BrowserRouter>

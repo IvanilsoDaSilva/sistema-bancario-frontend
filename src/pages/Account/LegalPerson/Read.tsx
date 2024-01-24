@@ -8,17 +8,15 @@ const Read = () => {
       <>
         <ol>
           <ul>
-            <a href="/account/individual-person/create">Voltar</a>
+            <a href="/account/legal-person/create">Voltar</a>
           </ul>
           <ul>
             <a href="/account">Login</a>
           </ul>
         </ol>
         <ol>
-          <ul>Nome: {state.name}</ul>
-          <ul>CPF: {state.cpf}</ul>
-          <ul>RG: {state.rg}</ul>
-          <ul>Nascimento: {state.birth}</ul>
+          <ul>Razão social: {state.companyName}</ul>
+          <ul>CNPJ: {state.cnpj}</ul>
           <ul>Numero da conta: {state.number}</ul>
         </ol>
       </>

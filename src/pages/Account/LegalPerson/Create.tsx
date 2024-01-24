@@ -5,6 +5,7 @@ import { ILegalPersonAccount } from "../../../interfaces/LegalPersonAccount";
 
 const Create = () => {
   const navigate = useNavigate()
+  
   const [companyName, setCompanyName] = useState<string|null>(null);
   const [cnpj, setCnpj] = useState<string|null>(null);
   const [password, setPassword] = useState<string|null>(null);
@@ -13,7 +14,7 @@ const Create = () => {
 
   const [httpStatus, setHttpStatus] = useState("");
 
-  const CreateIndividualPersonAccountFunction = async (e: {
+  const handle = async (e: {
     preventDefault: () => void;
   }) => {
     e.preventDefault();
@@ -27,14 +28,20 @@ const Create = () => {
     } as ILegalPersonAccount);
     setHttpStatus(response.status.toString())
 
-    response.json().then(i => console.log(i))
-    // if(response.status == 201) navigate('/')
+    if(response.status == 201) {
+      response.json().then(i => navigate('/account/legal-person/read', {state: i}))
+    }
   };
 
   return (
     <>
-    <p>{httpStatus}</p>
-      <form method="POST" onSubmit={CreateIndividualPersonAccountFunction}>
+      <ol>
+        <ul>
+          <a href="/account">Voltar</a>
+        </ul>
+      </ol>
+      <p>{httpStatus}</p>
+      <form method="POST" onSubmit={handle}>
         <label htmlFor="razaoSocial">Razão Social: </label>
         <input
           type="text"
