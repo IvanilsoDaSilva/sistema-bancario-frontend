@@ -2,6 +2,8 @@ import "./css/App.css";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 import Index from "./pages/Index";
 import Account from "./pages/Account/Index";
+import Admin from "./pages/Admin/Index";
+import Dashboard from "./pages/Account/Dashboard";
 import IndividualPersonAccount from "./pages/Account/IndividualPerson/Index";
 import LegalPersonAccount from "./pages/Account/LegalPerson/Index";
 import IndividualPersonAccountCreate from "./pages/Account/IndividualPerson/Create";
@@ -16,6 +18,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/account" element={<Account />} />
+          <Route path="/admin" element={<Admin />} />
+          <Route path="/account/dashboard" element={<Dashboard />} />
           <Route
             path="/account/individual-person/"
             element={<IndividualPersonAccount />}
