@@ -29,6 +29,7 @@ This project is intended to provide a solid foundation for anyone just starting 
   ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=FFFFFF&color=FF00FF)&nbsp;
   ![NPM](https://img.shields.io/badge/NPM-%23CB3837.svg?style=for-the-badge&logo=npm&logoColor=FFFFFF&color=FF00FF)&nbsp;
   ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=FFFFFF&color=FF00FF)&nbsp;
+  ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=FFFFFF&color=FF00FF)&nbsp;
   
   <!-- languages -->
   ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=FFFFFF&color=FF00FF)&nbsp;
