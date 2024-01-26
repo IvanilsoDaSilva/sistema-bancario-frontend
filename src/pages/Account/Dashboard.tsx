@@ -1,9 +1,8 @@
-import { useLocation } from 'react-router-dom';
+import { useCookies } from 'react-cookie';
 
 const Dashboard = () => {
-    const { state } = useLocation();
+    const [cookies, setCookie] = useCookies(['user']);
 
-    console.log(state)
     return (
       <>
         <ol>
@@ -12,11 +11,11 @@ const Dashboard = () => {
           </ul>
         </ol>
         <ol>
-          {state.cpf != null ? <><ul>Nome: {state.name}</ul>{/*<ul>CPF: {state.cpf}</ul><ul>RG: {state.rg}</ul><ul>Nascimento: {state.birth}</ul>*/}</> : ""}
-          {state.cnpj != null ? <><ul>Razão social: {state.companyName}</ul>{/*<ul>CNPJ: {state.cnpj}</ul>*/}</> : ""}
-          <ul>Agencia da conta: {state.agencyCode}</ul>
-          <ul>Numero da conta: {state.number}</ul>
-          <ul>Saldo da conta: {state.balance}</ul>
+          {cookies.user.cpf != null ? <><ul>Nome: {cookies.user.name}</ul></> : <></>}
+          {cookies.user.cnpj != null ? <><ul>Razão social: {cookies.user.companyName}</ul></> : <></>}
+          <ul>Agencia da conta: {cookies.user.agencyCode}</ul>
+          <ul>Numero da conta: {cookies.user.number}</ul>
+          <ul>Saldo da conta: {cookies.user.balance}</ul>
         </ol>
         <ol>
           <ul>

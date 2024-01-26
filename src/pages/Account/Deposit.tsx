@@ -1,68 +1,32 @@
-import { useState } from "react";
-import { useNavigate } from 'react-router-dom'
-import { LoginAccount } from "../../api/SistemaBancarioBackend";
-import { ILoginAccount } from "../../interfaces/LoginAccount";
+import { useCookies } from 'react-cookie';
 
-const Index = () => {
-  const navigate = useNavigate()
-  
-  const [number, setNumber] = useState<string|null>(null);
-  const [password, setPassword] = useState<string|null>(null);
-
-  const [httpStatus, setHttpStatus] = useState("");
-
-  const handle = async (e: {
-    preventDefault: () => void;
-  }) => {
-    e.preventDefault();
-
-    const response = await LoginAccount({
-      number,
-      password,
-    } as ILoginAccount);
-    setHttpStatus(response.status.toString())
-
-    if(response.status == 201) {
-      response.json().then(i => navigate('/account/dashboard', {state: i}))
-    }
-  };
+const Dashboard = () => {
+  const [cookies, setCookie] = useCookies(['user']);
 
   return (
     <>
-      <p>{httpStatus}</p>
       <ol>
         <ul>
-          <a href="/">Voltar</a>
-        </ul>
-        <ul>
-          <a href="/account/individual-person/create">Criar uma conta pessoal</a>
-        </ul>
-        <ul>
-          <a href="/account/legal-person/create">Criar uma conta de empresarial</a>
+          <a href="/account">Voltar</a>
         </ul>
       </ol>
-      <form method="POST" onSubmit={handle}>
-        <label htmlFor="number">Numero da conta: </label>
-        <input
-          type="text"
-          name="number"
-          value={number as string}
-          onChange={(e) => setNumber(e.target.value)}
-        />
-
-        <label htmlFor="password">Senha: </label>
-        <input
-          type="password"
-          name="password"
-          value={password as string}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-
-        <button type="submit">Enviar</button>
-      </form>
+      <ol>
+        {cookies.user.cpf != null ? <><ul>Nome: {cookies.user.name}</ul></> : <></>}
+        {cookies.user.cnpj != null ? <><ul>Razão social: {cookies.user.companyName}</ul></> : <></>}
+        <ul>Agencia da conta: {cookies.user.agencyCode}</ul>
+        <ul>Numero da conta: {cookies.user.number}</ul>
+        <ul>Saldo da conta: {cookies.user.balance}</ul>
+      </ol>
+      <ol>
+        <ul>
+          <a href="">Sacar</a>
+        </ul>
+        <ul>
+          <a href="">Depositar</a>
+        </ul>
+      </ol>
     </>
   );
 };
-
-export default Index;
-
+  
+export default Dashboard;

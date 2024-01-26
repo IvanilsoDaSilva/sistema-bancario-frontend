@@ -1,6 +1,8 @@
-import { useState } from "react";
 import { useNavigate } from 'react-router-dom'
+import { useState } from "react";
+
 import { CreateIndividualPersonAccount } from "../../../api/SistemaBancarioBackend";
+
 import { IIndividualPersonAccount } from "../../../interfaces/IndividualPersonAccount";
 
 const Create = () => {
@@ -19,15 +21,7 @@ const Create = () => {
   const handle = async (e: {preventDefault: () => void;}) => {
     e.preventDefault();
 
-    const response = await CreateIndividualPersonAccount({
-      name,
-      cpf,
-      rg,
-      birth,
-      password,
-      accountType,
-      agencyCode,
-    } as IIndividualPersonAccount);
+    const response = await CreateIndividualPersonAccount({name,cpf,rg,birth,password,accountType,agencyCode} as IIndividualPersonAccount);
     setHttpStatus(response.status.toString())
 
     if(response.status == 201) {

@@ -3,7 +3,6 @@ import { useLocation } from 'react-router-dom';
 const Read = () => {
     const { state } = useLocation();
 
-    console.log(state)
     return (
       <>
         <ol>

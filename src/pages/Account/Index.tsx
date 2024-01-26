@@ -1,6 +1,9 @@
-import { useState } from "react";
+import { useCookies } from 'react-cookie';
 import { useNavigate } from 'react-router-dom'
+import { useState } from "react";
+
 import { LoginAccount } from "../../api/SistemaBancarioBackend";
+
 import { ILoginAccount } from "../../interfaces/LoginAccount";
 
 const Index = () => {
@@ -10,6 +13,8 @@ const Index = () => {
   const [password, setPassword] = useState<string|null>(null);
 
   const [httpStatus, setHttpStatus] = useState("");
+
+  const [cookies, setCookie] = useCookies(['user']);
 
   const handle = async (e: {
     preventDefault: () => void;
@@ -23,7 +28,7 @@ const Index = () => {
     setHttpStatus(response.status.toString())
 
     if(response.status == 201) {
-      response.json().then(i => navigate('/account/dashboard', {state: i}))
+      response.json().then(i => {setCookie('user', i);navigate('/account/dashboard')})
     }
   };
 

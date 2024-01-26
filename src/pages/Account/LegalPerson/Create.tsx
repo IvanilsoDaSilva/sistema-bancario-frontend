@@ -1,6 +1,8 @@
-import { useState } from "react";
 import { useNavigate } from 'react-router-dom'
+import { useState } from "react";
+
 import { CreateLegalPersonAccount } from "../../../api/SistemaBancarioBackend";
+
 import { ILegalPersonAccount } from "../../../interfaces/LegalPersonAccount";
 
 const Create = () => {
@@ -14,18 +16,10 @@ const Create = () => {
 
   const [httpStatus, setHttpStatus] = useState("");
 
-  const handle = async (e: {
-    preventDefault: () => void;
-  }) => {
+  const handle = async (e: {preventDefault: () => void;}) => {
     e.preventDefault();
 
-    const response = await CreateLegalPersonAccount({
-      companyName,
-      cnpj,
-      password,
-      accountType,
-      agencyCode,
-    } as ILegalPersonAccount);
+    const response = await CreateLegalPersonAccount({companyName,cnpj,password,accountType,agencyCode} as ILegalPersonAccount);
     setHttpStatus(response.status.toString())
 
     if(response.status == 201) {

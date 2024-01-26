@@ -1,5 +1,7 @@
 import "./css/App.css";
+
 import { Route, Routes, BrowserRouter } from "react-router-dom";
+
 import Index from "./pages/Index";
 import Account from "./pages/Account/Index";
 import Admin from "./pages/Admin/Index";
@@ -11,10 +13,13 @@ import IndividualPersonAccountRead from "./pages/Account/IndividualPerson/Read";
 import LegalPersonAccountCreate from "./pages/Account/LegalPerson/Create";
 import LegalPersonAccountRead from "./pages/Account/LegalPerson/Read";
 
+import Header from "./components/Header";
+
 function App() {
   return (
     <>
       <BrowserRouter>
+        <Header/>
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/account" element={<Account />} />
