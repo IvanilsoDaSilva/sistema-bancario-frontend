@@ -1,4 +1,6 @@
 export interface ILegalPersonAccount {
+  id: string;
+
   companyName: string;
   cnpj: string;
 

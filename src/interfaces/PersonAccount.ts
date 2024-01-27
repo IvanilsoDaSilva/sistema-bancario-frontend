@@ -1,4 +1,6 @@
 export interface IPersonAccount {
+  id: string;
+
   companyName: string;
   cnpj: string;
 
@@ -7,6 +9,7 @@ export interface IPersonAccount {
   rg: string;
   birth: Date;
 
+  balance: number;
   password: string;
   accountType: string;
   agencyCode: string;

@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 import { CreateLegalPersonAccount } from "../../../api/SistemaBancarioBackend";
@@ -6,35 +6,43 @@ import { CreateLegalPersonAccount } from "../../../api/SistemaBancarioBackend";
 import { ILegalPersonAccount } from "../../../interfaces/LegalPersonAccount";
 
 const Create = () => {
-  const navigate = useNavigate()
-  
-  const [companyName, setCompanyName] = useState<string|null>(null);
-  const [cnpj, setCnpj] = useState<string|null>(null);
-  const [password, setPassword] = useState<string|null>(null);
+  const navigate = useNavigate();
+
+  const [companyName, setCompanyName] = useState<string | null>(null);
+  const [cnpj, setCnpj] = useState<string | null>(null);
+  const [password, setPassword] = useState<string | null>(null);
   const [accountType, setAccountType] = useState("CORRENTE");
   const [agencyCode, setAgencyCode] = useState("001");
 
   const [httpStatus, setHttpStatus] = useState("");
 
-  const handle = async (e: {preventDefault: () => void;}) => {
+  const handle = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
 
-    const response = await CreateLegalPersonAccount({companyName,cnpj,password,accountType,agencyCode} as ILegalPersonAccount);
-    setHttpStatus(response.status.toString())
+    const response = await CreateLegalPersonAccount({
+      companyName,
+      cnpj,
+      password,
+      accountType,
+      agencyCode,
+    } as ILegalPersonAccount);
+    setHttpStatus(response.status.toString());
 
-    if(response.status == 201) {
-      response.json().then(i => navigate('/account/legal-person/read', {state: i}))
+    if (response.status == 201) {
+      response
+        .json()
+        .then((i) => navigate("/account/legal-person/read", { state: i }));
     }
   };
 
   return (
     <>
+      <p>{httpStatus}</p>
       <ol>
         <ul>
           <a href="/account">Voltar</a>
         </ul>
       </ol>
-      <p>{httpStatus}</p>
       <form method="POST" onSubmit={handle}>
         <label htmlFor="razaoSocial">Razão Social: </label>
         <input

@@ -14,17 +14,19 @@ import LegalPersonAccountCreate from "./pages/Account/LegalPerson/Create";
 import LegalPersonAccountRead from "./pages/Account/LegalPerson/Read";
 
 import Header from "./components/Header";
+import Deposit from "./pages/Account/Deposit";
 
 function App() {
   return (
     <>
       <BrowserRouter>
-        <Header/>
+        <Header />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/account" element={<Account />} />
           <Route path="/admin" element={<Admin />} />
           <Route path="/account/dashboard" element={<Dashboard />} />
+          <Route path="/account/deposit" element={<Deposit />} />
           <Route
             path="/account/individual-person/"
             element={<IndividualPersonAccount />}

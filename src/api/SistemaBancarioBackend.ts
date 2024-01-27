@@ -1,10 +1,13 @@
 import { ILoginAccount } from "../interfaces/LoginAccount";
 import { IIndividualPersonAccount } from "../interfaces/IndividualPersonAccount";
 import { ILegalPersonAccount } from "../interfaces/LegalPersonAccount";
+import { IPersonAccount } from "../interfaces/PersonAccount";
 
 const baseURL = import.meta.env.VITE_API_BASE_URL;
 
-export const LoginAccount = async (LoginAccount: ILoginAccount) : Promise<Response> => {
+export const LoginAccount = async (
+  LoginAccount: ILoginAccount
+): Promise<Response> => {
   const headers = new Headers();
   headers.append("Content-Type", "application/json");
 
@@ -13,10 +16,22 @@ export const LoginAccount = async (LoginAccount: ILoginAccount) : Promise<Respon
     headers: headers,
     body: JSON.stringify(LoginAccount),
   });
-  
 };
 
-export const CreateIndividualPersonAccount = async (individualPersonAccount: IIndividualPersonAccount) : Promise<Response> => {
+export const Deposit = async (Deposit: IPersonAccount): Promise<Response> => {
+  const headers = new Headers();
+  headers.append("Content-Type", "application/json");
+
+  return await fetch(baseURL + "/account/deposit", {
+    method: "POST",
+    headers: headers,
+    body: JSON.stringify(Deposit),
+  });
+};
+
+export const CreateIndividualPersonAccount = async (
+  individualPersonAccount: IIndividualPersonAccount
+): Promise<Response> => {
   const headers = new Headers();
   headers.append("Content-Type", "application/json");
 
@@ -27,7 +42,9 @@ export const CreateIndividualPersonAccount = async (individualPersonAccount: IIn
   });
 };
 
-export const CreateLegalPersonAccount = async (legalPersonAccount: ILegalPersonAccount) : Promise<Response> => {
+export const CreateLegalPersonAccount = async (
+  legalPersonAccount: ILegalPersonAccount
+): Promise<Response> => {
   const headers = new Headers();
   headers.append("Content-Type", "application/json");
 

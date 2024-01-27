@@ -1,21 +1,33 @@
-import { useCookies } from 'react-cookie';
-import { useNavigate } from 'react-router-dom'
+import { useCookies } from "react-cookie";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
-    const navigate = useNavigate()
+  const navigate = useNavigate();
 
-    const [cookies, setCookie] = useCookies(['user']);
+  const [cookies, setCookie, removeCookie] = useCookies(["user"]);
 
-    return (
+  return (
+    <>
+      {cookies.user != null ? (
         <>
-            {
-                
-                (cookies.user != null)
-                ? <><a href="account/dashboard">{cookies.user.name}{cookies.user.companyName}</a><button onClick={()=>{setCookie("user", null);navigate('/account')}}>Deslogar</button></>
-                : <></> 
-            }
+          <a href="/account/dashboard">
+            {cookies.user.name}
+            {cookies.user.companyName}
+          </a>
+          <button
+            onClick={() => {
+              removeCookie("user", { path: "/" });
+              navigate("/account");
+            }}
+          >
+            Deslogar
+          </button>
         </>
-    )
-}
+      ) : (
+        <></>
+      )}
+    </>
+  );
+};
 
-export default Header
+export default Header;

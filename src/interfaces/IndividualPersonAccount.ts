@@ -1,4 +1,6 @@
 export interface IIndividualPersonAccount {
+  id: string;
+
   name: string;
   cpf: string;
   rg: string;
