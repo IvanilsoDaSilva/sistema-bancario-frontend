@@ -8,11 +8,11 @@ import { IIndividualPersonAccount } from "../../../interfaces/IndividualPersonAc
 const Create = () => {
   const navigate = useNavigate();
 
-  const [name, setName] = useState<string | null>(null);
-  const [cpf, setCpf] = useState<string | null>(null);
-  const [rg, setRg] = useState<string | null>(null);
+  const [name, setName] = useState<string>("");
+  const [cpf, setCpf] = useState<string>("");
+  const [rg, setRg] = useState<string>("");
   const [birth, setBirth] = useState<Date | null>(new Date());
-  const [password, setPassword] = useState<string | null>(null);
+  const [password, setPassword] = useState<string>("");
   const [accountType, setAccountType] = useState("CORRENTE");
   const [agencyCode, setAgencyCode] = useState("001");
 

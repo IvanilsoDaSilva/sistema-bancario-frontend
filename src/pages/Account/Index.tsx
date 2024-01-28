@@ -1,5 +1,5 @@
-import { useCookies } from 'react-cookie';
-import { useNavigate } from 'react-router-dom'
+import { useCookies } from "react-cookie";
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 import { LoginAccount } from "../../api/SistemaBancarioBackend";
@@ -7,28 +7,31 @@ import { LoginAccount } from "../../api/SistemaBancarioBackend";
 import { ILoginAccount } from "../../interfaces/LoginAccount";
 
 const Index = () => {
-  const navigate = useNavigate()
-  
-  const [number, setNumber] = useState<string|null>(null);
-  const [password, setPassword] = useState<string|null>(null);
+  const navigate = useNavigate();
+
+  const [number, setNumber] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
 
   const [httpStatus, setHttpStatus] = useState("");
 
-  const [cookies, setCookie] = useCookies(['user']);
+  const [cookies, setCookie, removeCookie] = useCookies(["user"]);
 
-  const handle = async (e: {
-    preventDefault: () => void;
-  }) => {
+  const handle = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
 
     const response = await LoginAccount({
       number,
       password,
     } as ILoginAccount);
-    setHttpStatus(response.status.toString())
+    setHttpStatus(response.status.toString());
 
-    if(response.status == 201) {
-      response.json().then(i => {setCookie('user', i);navigate('/account/dashboard')})
+    if (response.status == 201) {
+      removeCookie("user", { path: "/" });
+
+      response.json().then((i) => {
+        setCookie("user", i, { path: "/" });
+        navigate("/account/dashboard");
+      });
     }
   };
 
@@ -40,10 +43,14 @@ const Index = () => {
           <a href="/">Voltar</a>
         </ul>
         <ul>
-          <a href="/account/individual-person/create">Criar uma conta pessoal</a>
+          <a href="/account/individual-person/create">
+            Criar uma conta pessoal
+          </a>
         </ul>
         <ul>
-          <a href="/account/legal-person/create">Criar uma conta de empresarial</a>
+          <a href="/account/legal-person/create">
+            Criar uma conta de empresarial
+          </a>
         </ul>
       </ol>
       <form method="POST" onSubmit={handle}>
@@ -70,4 +77,3 @@ const Index = () => {
 };
 
 export default Index;
-

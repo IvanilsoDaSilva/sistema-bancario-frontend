@@ -8,9 +8,9 @@ import { ILegalPersonAccount } from "../../../interfaces/LegalPersonAccount";
 const Create = () => {
   const navigate = useNavigate();
 
-  const [companyName, setCompanyName] = useState<string | null>(null);
-  const [cnpj, setCnpj] = useState<string | null>(null);
-  const [password, setPassword] = useState<string | null>(null);
+  const [companyName, setCompanyName] = useState<string>("");
+  const [cnpj, setCnpj] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
   const [accountType, setAccountType] = useState("CORRENTE");
   const [agencyCode, setAgencyCode] = useState("001");
 

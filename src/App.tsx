@@ -4,6 +4,8 @@ import { Route, Routes, BrowserRouter } from "react-router-dom";
 
 import Index from "./pages/Index";
 import Account from "./pages/Account/Index";
+import Deposit from "./pages/Account/Deposit";
+import Withdraw from "./pages/Account/Withdraw";
 import Admin from "./pages/Admin/Index";
 import Dashboard from "./pages/Account/Dashboard";
 import IndividualPersonAccount from "./pages/Account/IndividualPerson/Index";
@@ -14,7 +16,6 @@ import LegalPersonAccountCreate from "./pages/Account/LegalPerson/Create";
 import LegalPersonAccountRead from "./pages/Account/LegalPerson/Read";
 
 import Header from "./components/Header";
-import Deposit from "./pages/Account/Deposit";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path="/admin" element={<Admin />} />
           <Route path="/account/dashboard" element={<Dashboard />} />
           <Route path="/account/deposit" element={<Deposit />} />
+          <Route path="/account/withdraw" element={<Withdraw />} />
           <Route
             path="/account/individual-person/"
             element={<IndividualPersonAccount />}

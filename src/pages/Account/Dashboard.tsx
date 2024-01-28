@@ -31,7 +31,7 @@ const Dashboard = () => {
       </ol>
       <ol>
         <ul>
-          <a href="">Sacar</a>
+          <a href="/account/withdraw ">Sacar</a>
         </ul>
         <ul>
           <a href="/account/deposit">Depositar</a>

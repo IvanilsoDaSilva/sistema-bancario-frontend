@@ -2,11 +2,11 @@ import { useCookies } from "react-cookie";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
-import { DepositAccount } from "../../api/SistemaBancarioBackend";
+import { WithdrawAccount } from "../../api/SistemaBancarioBackend";
 
 import { IPersonAccount } from "../../interfaces/PersonAccount";
 
-const Deposit = () => {
+const Withdraw = () => {
   const navigate = useNavigate();
 
   const [balance, setBalance] = useState<number | null>(null);
@@ -18,7 +18,7 @@ const Deposit = () => {
   const handle = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
 
-    const response = await DepositAccount({
+    const response = await WithdrawAccount({
       id: cookies.user.id,
       balance,
     } as IPersonAccount);
@@ -51,4 +51,4 @@ const Deposit = () => {
   );
 };
 
-export default Deposit;
+export default Withdraw;

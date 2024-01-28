@@ -18,11 +18,26 @@ export const LoginAccount = async (
   });
 };
 
-export const Deposit = async (Deposit: IPersonAccount): Promise<Response> => {
+export const DepositAccount = async (
+  Deposit: IPersonAccount
+): Promise<Response> => {
   const headers = new Headers();
   headers.append("Content-Type", "application/json");
 
   return await fetch(baseURL + "/account/deposit", {
+    method: "POST",
+    headers: headers,
+    body: JSON.stringify(Deposit),
+  });
+};
+
+export const WithdrawAccount = async (
+  Deposit: IPersonAccount
+): Promise<Response> => {
+  const headers = new Headers();
+  headers.append("Content-Type", "application/json");
+
+  return await fetch(baseURL + "/account/withdraw", {
     method: "POST",
     headers: headers,
     body: JSON.stringify(Deposit),
