@@ -14,7 +14,7 @@ const Index = () => {
 
   const [httpStatus, setHttpStatus] = useState("");
 
-  const [cookies, setCookie, removeCookie] = useCookies(["user"]);
+  const [, setCookie, removeCookie] = useCookies(["user"]);
 
   const handle = async (e: { preventDefault: () => void }) => {
     e.preventDefault();

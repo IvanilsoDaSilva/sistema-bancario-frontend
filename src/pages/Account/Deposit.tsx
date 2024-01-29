@@ -13,7 +13,7 @@ const Deposit = () => {
 
   const [httpStatus, setHttpStatus] = useState("");
 
-  const [cookies, setCookie] = useCookies(["user"]);
+  const [cookies] = useCookies(["user"]);
 
   const handle = async (e: { preventDefault: () => void }) => {
     e.preventDefault();

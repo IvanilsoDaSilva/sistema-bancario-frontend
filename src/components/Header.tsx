@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 const Header = () => {
   const navigate = useNavigate();
 
-  const [cookies, setCookie, removeCookie, remove] = useCookies(["user"]);
+  const [cookies, , removeCookie] = useCookies(["user"]);
 
   return (
     <>

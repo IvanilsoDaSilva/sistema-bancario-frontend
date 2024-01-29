@@ -1,7 +1,7 @@
 import { useCookies } from "react-cookie";
 
 const Dashboard = () => {
-  const [cookies, setCookie] = useCookies(["user"]);
+  const [cookies] = useCookies(["user"]);
 
   return (
     <>
