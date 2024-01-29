@@ -18,8 +18,7 @@ const Header = () => {
             onClick={() => {
               removeCookie("user", { path: "/" });
               navigate("/account");
-            }}
-          >
+            }}>
             Deslogar
           </button>
         </>

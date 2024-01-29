@@ -24,7 +24,6 @@ const Index = () => {
       password,
     } as ILoginAccount);
     setHttpStatus(response.status.toString());
-
     if (response.status == 201) {
       removeCookie("user", { path: "/" });
 
