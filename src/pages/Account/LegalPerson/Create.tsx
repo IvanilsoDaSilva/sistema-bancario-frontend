@@ -50,6 +50,7 @@ const Create = () => {
           name="companyName"
           value={companyName as string}
           onChange={(e) => setCompanyName(e.target.value)}
+          required
         />
 
         <label htmlFor="cnpj">CNPJ: </label>
@@ -58,6 +59,7 @@ const Create = () => {
           name="cnpj"
           value={cnpj as string}
           onChange={(e) => setCnpj(e.target.value)}
+          required
         />
 
         <label htmlFor="password">Senha: </label>
@@ -66,6 +68,7 @@ const Create = () => {
           name="password"
           value={password as string}
           onChange={(e) => setPassword(e.target.value)}
+          required
         />
 
         <label htmlFor="accountType">Tipo da conta:</label>
@@ -73,6 +76,7 @@ const Create = () => {
           name="accountType"
           value={accountType}
           onChange={(e) => setAccountType(e.target.value)}
+          required
         >
           <option value="CORRENTE">CORRENTE</option>
           <option value="POUPANCA">POUPANCA</option>
@@ -85,6 +89,7 @@ const Create = () => {
           name="agencyCode"
           value={agencyCode}
           onChange={(e) => setAgencyCode(e.target.value)}
+          required
         >
           <option value="001">001</option>
           <option value="014">014</option>

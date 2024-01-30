@@ -11,15 +11,14 @@ const Header = () => {
       {cookies.user != null ? (
         <>
           <a href="/account/dashboard">
-            {cookies.user.name}
+            Olá, {cookies.user.name}!
             {cookies.user.companyName}
           </a>
-          <button
+          <button className="logout"
             onClick={() => {
               removeCookie("user", { path: "/" });
               navigate("/account");
-            }}>
-            Deslogar
+            }}>Deslogar
           </button>
         </>
       ) : (

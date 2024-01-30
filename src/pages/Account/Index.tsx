@@ -59,6 +59,7 @@ const Index = () => {
           name="number"
           value={number as string}
           onChange={(e) => setNumber(e.target.value)}
+          required
         />
 
         <label htmlFor="password">Senha: </label>
@@ -67,6 +68,7 @@ const Index = () => {
           name="password"
           value={password as string}
           onChange={(e) => setPassword(e.target.value)}
+          required
         />
 
         <button type="submit">Enviar</button>

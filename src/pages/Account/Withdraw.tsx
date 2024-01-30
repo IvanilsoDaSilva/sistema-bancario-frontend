@@ -44,6 +44,7 @@ const Withdraw = () => {
           name="balance"
           value={balance as number}
           onChange={(e) => setBalance(e.target.value as unknown as number)}
+          required
         />
         <button type="submit">Enviar</button>
       </form>

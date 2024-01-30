@@ -47,7 +47,9 @@
      height: 30px;
      width: 426px;
      border-radius: 5px;
-     padding: 5px;
+     padding: 8px;
+     transition: .1s;
+     border: 1px solid rgb(48, 45, 45);
    }
 
    label {
@@ -56,6 +58,15 @@
      font-size: 16px;
      line-height: 24px;
      margin: 10px 0px 2px 0px;
+   }
+
+   :focus {
+     border: 1px #646cff solid;
+     outline: none;
+   }
+
+   :focus::placeholder {
+     color: #646cff;
    }
  }
 
@@ -76,6 +87,7 @@
 
  button {
    margin-top: 20px;
+   color: #fafafa;
    border-radius: 8px;
    border: 1px solid transparent;
    padding: 0.6em 1.2em;
@@ -85,6 +97,11 @@
    background-color: #27272A;
    cursor: pointer;
    transition: border-color 0.25s;
+
+ }
+
+ .logout {
+   margin-left: 5px;
  }
 
  button:hover {
