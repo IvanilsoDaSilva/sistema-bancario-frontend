@@ -53,7 +53,11 @@ This project is intended to provide a solid foundation for anyone just starting 
 ```
 npm install
 ```
-📌 CONFIGURE THE .env FILE  
+📌 RUN THE SYSTEM BACKEND IN [sistema-bancario-backend](https://github.com/IvanilsoDaSilva/sistema-bancario-backend)  
+📌 CONFIGURE THE ".env" FILE 
+```
+VITE_API_BASE_URL = {YOUR API URL}
+```
 📌 START THE PROJECT  
 ```
 npm run dev
