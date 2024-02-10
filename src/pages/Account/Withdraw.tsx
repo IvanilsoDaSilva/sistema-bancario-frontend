@@ -5,6 +5,7 @@ import { useState } from "react";
 import { WithdrawAccount } from "../../api/SistemaBancarioBackend";
 
 import { IPersonAccount } from "../../interfaces/PersonAccount";
+import InputField from "../../components/Input";
 
 const Withdraw = () => {
   const navigate = useNavigate();
@@ -39,11 +40,12 @@ const Withdraw = () => {
       </ol>
       <form method="POST" onSubmit={handle}>
         <label htmlFor="namber">Valor: </label>
-        <input
+        <InputField
           type="number"
           name="balance"
           value={balance as number}
-          onChange={(e) => setBalance(e.target.value as unknown as number)}
+          onChange={(e: any) => setBalance(e.target.value as unknown as number)}
+          required
         />
         <button type="submit">Enviar</button>
       </form>

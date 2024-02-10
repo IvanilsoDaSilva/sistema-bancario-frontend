@@ -1,27 +1,26 @@
 import { useCookies } from "react-cookie";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-
-import { DepositAccount } from "../../api/SistemaBancarioBackend";
-
 import { IPersonAccount } from "../../interfaces/PersonAccount";
+import { TransferAccount } from "../../api/SistemaBancarioBackend";
 import InputField from "../../components/Input";
 
-const Deposit = () => {
-  const navigate = useNavigate();
 
+const Transfer = () => {
+  const navigate = useNavigate();
   const [balance, setBalance] = useState<number | null>(null);
+  const [account, setAccount] = useState<number | null>(null);
 
   const [httpStatus, setHttpStatus] = useState("");
-
   const [cookies] = useCookies(["user"]);
+
 
   const handle = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
 
-    const response = await DepositAccount({
+    const response = await TransferAccount({
       id: cookies.user.id,
-      balance,
+      balance
     } as IPersonAccount);
     setHttpStatus(response.status.toString());
 
@@ -29,7 +28,6 @@ const Deposit = () => {
       navigate("/account/dashboard");
     }
   };
-
   return (
     <>
       <p>{httpStatus}</p>
@@ -39,6 +37,14 @@ const Deposit = () => {
         </ul>
       </ol>
       <form method="POST" onSubmit={handle}>
+        <label htmlFor="account">Conta: </label>
+        <InputField
+          type="number"
+          name="account"
+          value={account as number}
+          onChange={(e: any) => setAccount(e.target.value as unknown as number)}
+          required
+        />
         <label htmlFor="balance">Valor: </label>
         <InputField
           type="number"
@@ -53,4 +59,4 @@ const Deposit = () => {
   );
 };
 
-export default Deposit;
+export default Transfer;

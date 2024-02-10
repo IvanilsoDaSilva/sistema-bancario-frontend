@@ -1,8 +1,10 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
-import { CreateIndividualPersonAccount } from "../../../api/SistemaBancarioBackend";
+import InputField from "../../../components/Input";
 
+
+import { CreateIndividualPersonAccount } from "../../../api/SistemaBancarioBackend";
 import { IIndividualPersonAccount } from "../../../interfaces/IndividualPersonAccount";
 
 const Create = () => {
@@ -17,6 +19,7 @@ const Create = () => {
   const [agencyCode, setAgencyCode] = useState("001");
 
   const [httpStatus, setHttpStatus] = useState("");
+
 
   const handle = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
@@ -48,51 +51,57 @@ const Create = () => {
         </ul>
       </ol>
       <form method="POST" onSubmit={handle}>
-        <label htmlFor="name">Nome: </label>
-        <input
+
+        <InputField
           type="text"
-          name="name"
           value={name as string}
-          onChange={(e) => setName(e.target.value)}
+          placeholder="Digite o seu nome"
+          label="Nome: "
+          name="name"
+          onChange={(e: any) => setName(e.target.value)}
         />
 
-        <label htmlFor="cpf">CPF: </label>
-        <input
+        <InputField
           type="text"
-          name="cpf"
           value={cpf as string}
-          onChange={(e) => setCpf(e.target.value)}
+          placeholder="000.000.000-00"
+          label="CPF: "
+          name="cpf"
+          onChange={(e: any) => setCpf(e.target.value)}
         />
 
-        <label htmlFor="rg">RG: </label>
-        <input
+        <InputField
           type="text"
-          name="rg"
           value={rg as string}
-          onChange={(e) => setRg(e.target.value)}
+          placeholder="00.000.000-0"
+          label="RG: "
+          name="rg"
+          onChange={(e: any) => setRg(e.target.value)}
         />
 
-        <label htmlFor="birth">Nascimento: </label>
-        <input
+        <InputField
           type="date"
-          name="birth"
           value={birth as unknown as string}
-          onChange={(e) => setBirth(e.target.value as unknown as Date)}
+          placeholder="00.000.000-0"
+          label="Nascimento: "
+          name="birth"
+          onChange={(e: any) => setBirth(e.target.value as unknown as Date)}
         />
 
-        <label htmlFor="password">Senha: </label>
-        <input
+        <InputField
           type="password"
-          name="password"
           value={password as string}
-          onChange={(e) => setPassword(e.target.value)}
+          placeholder="Digite sua senha"
+          label="Senha: "
+          name="password"
+          onChange={(e: any) => setPassword(e.target.value)}
         />
 
         <label htmlFor="accountType">Tipo da conta:</label>
         <select
           name="accountType"
           value={accountType}
-          onChange={(e) => setAccountType(e.target.value)}
+          onChange={(e) => setAccountType(e.target.value)} required
         >
           <option value="CORRENTE">CORRENTE</option>
           <option value="POUPANCA">POUPANCA</option>

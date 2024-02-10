@@ -6,6 +6,8 @@ import Index from "./pages/Index";
 import Account from "./pages/Account/Index";
 import Deposit from "./pages/Account/Deposit";
 import Withdraw from "./pages/Account/Withdraw";
+import Transfer from "./pages/Account/Transfer";
+
 import Admin from "./pages/Admin/Index";
 import Dashboard from "./pages/Account/Dashboard";
 import IndividualPersonAccount from "./pages/Account/IndividualPerson/Index";
@@ -29,6 +31,7 @@ function App() {
           <Route path="/account/dashboard" element={<Dashboard />} />
           <Route path="/account/deposit" element={<Deposit />} />
           <Route path="/account/withdraw" element={<Withdraw />} />
+          <Route path="/account/transfer" element={<Transfer />} />
           <Route
             path="/account/individual-person/"
             element={<IndividualPersonAccount />}

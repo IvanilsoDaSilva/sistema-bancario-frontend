@@ -44,6 +44,19 @@ export const WithdrawAccount = async (
   });
 };
 
+export const TransferAccount = async (
+  Transfer: IPersonAccount
+): Promise<Response> => {
+  const headers = new Headers();
+  headers.append("Content-Type", "application/json");
+
+  return await fetch(baseURL + "/account/transfer", {
+    method: "POST",
+    headers: headers,
+    body: JSON.stringify(Transfer),
+  });
+};
+
 export const CreateIndividualPersonAccount = async (
   individualPersonAccount: IIndividualPersonAccount
 ): Promise<Response> => {
@@ -69,3 +82,4 @@ export const CreateLegalPersonAccount = async (
     body: JSON.stringify(legalPersonAccount),
   });
 };
+
