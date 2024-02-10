@@ -8,19 +8,20 @@ import InputField from "../../components/Input";
 
 const Transfer = () => {
   const navigate = useNavigate();
+
   const [balance, setBalance] = useState<number | null>(null);
-  const [account, setAccount] = useState<number | null>(null);
+  const [account, setAccount] = useState<String | null>(null);
 
   const [httpStatus, setHttpStatus] = useState("");
   const [cookies] = useCookies(["user"]);
-
 
   const handle = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
 
     const response = await TransferAccount({
       id: cookies.user.id,
-      balance
+      target: account,
+      balance: balance
     } as IPersonAccount);
     setHttpStatus(response.status.toString());
 
@@ -37,14 +38,16 @@ const Transfer = () => {
         </ul>
       </ol>
       <form method="POST" onSubmit={handle}>
+
         <label htmlFor="account">Conta: </label>
         <InputField
-          type="number"
+          type="string"
           name="account"
-          value={account as number}
-          onChange={(e: any) => setAccount(e.target.value as unknown as number)}
+          value={account as String}
+          onChange={(e: any) => setAccount(e.target.value as String)}
           required
         />
+
         <label htmlFor="balance">Valor: </label>
         <InputField
           type="number"
@@ -53,6 +56,7 @@ const Transfer = () => {
           onChange={(e: any) => setBalance(e.target.value as unknown as number)}
           required
         />
+
         <button type="submit">Enviar</button>
       </form>
     </>
