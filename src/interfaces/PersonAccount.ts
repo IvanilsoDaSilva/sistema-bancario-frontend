@@ -9,6 +9,7 @@ export interface IPersonAccount {
   rg: string;
   birth: Date;
 
+  target: string;
   balance: number;
   password: string;
   accountType: string;
