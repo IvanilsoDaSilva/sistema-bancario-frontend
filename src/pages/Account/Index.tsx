@@ -5,6 +5,7 @@ import { useState } from "react";
 import { LoginAccount } from "../../api/SistemaBancarioBackend";
 
 import { ILoginAccount } from "../../interfaces/LoginAccount";
+import InputField from "../../components/Input";
 
 const Index = () => {
   const navigate = useNavigate();
@@ -54,20 +55,20 @@ const Index = () => {
       </ol>
       <form method="POST" onSubmit={handle}>
         <label htmlFor="number">Numero da conta: </label>
-        <input
+        <InputField
           type="text"
           name="number"
           value={number as string}
-          onChange={(e) => setNumber(e.target.value)}
+          onChange={(e: any) => setNumber(e.target.value)}
           required
         />
 
         <label htmlFor="password">Senha: </label>
-        <input
+        <InputField
           type="password"
           name="password"
           value={password as string}
-          onChange={(e) => setPassword(e.target.value)}
+          onChange={(e: any) => setPassword(e.target.value)}
           required
         />
 

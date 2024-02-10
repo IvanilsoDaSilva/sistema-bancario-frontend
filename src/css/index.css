@@ -16,6 +16,13 @@
    -moz-osx-font-smoothing: grayscale;
  }
 
+ ::placeholder {
+  font-size: 12px;
+  font-weight: 600;
+  font-family: Manrope, system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+}
+
  body {
    margin: 0;
    display: flex;

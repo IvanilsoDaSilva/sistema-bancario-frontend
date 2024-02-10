@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { IPersonAccount } from "../../interfaces/PersonAccount";
 import { TransferAccount } from "../../api/SistemaBancarioBackend";
+import InputField from "../../components/Input";
 
 
 const Transfer = () => {
@@ -37,19 +38,19 @@ const Transfer = () => {
       </ol>
       <form method="POST" onSubmit={handle}>
         <label htmlFor="account">Conta: </label>
-        <input
+        <InputField
           type="number"
           name="account"
           value={account as number}
-          onChange={(e) => setAccount(e.target.value as unknown as number)}
+          onChange={(e: any) => setAccount(e.target.value as unknown as number)}
           required
         />
         <label htmlFor="balance">Valor: </label>
-        <input
+        <InputField
           type="number"
           name="balance"
           value={balance as number}
-          onChange={(e) => setBalance(e.target.value as unknown as number)}
+          onChange={(e: any) => setBalance(e.target.value as unknown as number)}
           required
         />
         <button type="submit">Enviar</button>

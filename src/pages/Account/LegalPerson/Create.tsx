@@ -4,6 +4,7 @@ import { useState } from "react";
 import { CreateLegalPersonAccount } from "../../../api/SistemaBancarioBackend";
 
 import { ILegalPersonAccount } from "../../../interfaces/LegalPersonAccount";
+import InputField from "../../../components/Input";
 
 const Create = () => {
   const navigate = useNavigate();
@@ -45,29 +46,29 @@ const Create = () => {
       </ol>
       <form method="POST" onSubmit={handle}>
         <label htmlFor="razaoSocial">Razão Social: </label>
-        <input
+        <InputField
           type="text"
           name="companyName"
           value={companyName as string}
-          onChange={(e) => setCompanyName(e.target.value)}
+          onChange={(e: any) => setCompanyName(e.target.value)}
           required
         />
 
         <label htmlFor="cnpj">CNPJ: </label>
-        <input
+        <InputField
           type="text"
           name="cnpj"
           value={cnpj as string}
-          onChange={(e) => setCnpj(e.target.value)}
+          onChange={(e: any) => setCnpj(e.target.value)}
           required
         />
 
         <label htmlFor="password">Senha: </label>
-        <input
+        <InputField
           type="password"
           name="password"
           value={password as string}
-          onChange={(e) => setPassword(e.target.value)}
+          onChange={(e: any) => setPassword(e.target.value)}
           required
         />
 

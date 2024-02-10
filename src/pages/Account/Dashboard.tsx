@@ -11,18 +11,17 @@ const Dashboard = () => {
         </ul>
       </ol>
       <ol>
-        {cookies.user.cpf != null ? (
-          <>
+        {
+          cookies.user.cpf != null && (
             <ul>Nome: {cookies.user.name}</ul>
-          </>
-        ) : (<></>)}
-        {cookies.user.cnpj != null ? (
-          <>
+          )
+        }
+        {
+          cookies.user.cnpj != null && (
             <ul>Razão social: {cookies.user.companyName}</ul>
-          </>
-        ) : (
-          <></>
-        )}
+          )
+        }
+
         <ul>Agencia da conta: {cookies.user.agencyCode}</ul>
         <ul>Numero da conta: {cookies.user.number}</ul>
         <ul>Saldo da conta: R$ {cookies.user.balance}</ul>

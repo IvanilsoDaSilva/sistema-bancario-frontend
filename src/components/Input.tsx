@@ -1,6 +1,6 @@
 const InputField = ({ value, label, name, placeholder, type, onChange }: any) => (
   <>
-    <label htmlFor="input-field">{label}</label>
+    {label ? <label htmlFor="input-field">{label}</label> : <> </>}
     <input
       type={type}
       value={value}
