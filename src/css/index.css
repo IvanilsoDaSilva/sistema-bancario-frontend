@@ -140,3 +140,23 @@
      opacity: 1;
    }
  }
+
+ table {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table td, table th {
+  padding: 8px;
+}
+
+table tr:nth-child(even){background-color: #111111;}
+
+table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4b50b1;
+  color: white;
+}
