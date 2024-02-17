@@ -11,8 +11,8 @@ const Header = () => {
       {cookies.user != null ? (
         <>
           <a href="/account/dashboard">
-            Olá, {cookies.user.name}!
-            {cookies.user.companyName}
+            {cookies.user.name && `Olá, ${cookies.user.name}!`}
+            {cookies.user.companyName && `Olá, ${cookies.user.companyName}!`}
           </a>
           <button className="logout"
             onClick={() => {
