@@ -57,6 +57,17 @@ export const TransferAccount = async (
   });
 };
 
+export const AdminPageData = async (): Promise<Response> => {
+  const headers = new Headers();
+  headers.append("Content-Type", "application/json");
+
+  return await fetch(baseURL + "/account/read-all", {
+    method: "GET",
+    headers: headers,
+    body: JSON.stringify(AdminPageData),
+  });
+};
+
 export const CreateIndividualPersonAccount = async (
   individualPersonAccount: IIndividualPersonAccount
 ): Promise<Response> => {
