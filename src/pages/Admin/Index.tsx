@@ -1,18 +1,25 @@
 import { useEffect, useState } from "react";
-const baseURL = import.meta.env.VITE_API_BASE_URL;
+import { AdminPageData } from "../../api/SistemaBancarioBackend";
 
 const Index = () => {
 
   const [users, setUsers] = useState<any[]>([])
 
   useEffect(() => {
-    fetch(baseURL + '/account/read-all')
-      .then((res) => {
-        return res.json();
-      })
-      .then((data) => {
+    const getAdminPageData = async () => {
+      try {
+        const response = await AdminPageData();
+        if (!response.ok) {
+          throw new Error('Não conseguimos pegar os dados da API');
+        }
+        const data = await response.json();
         setUsers(data);
-      });
+      } catch (err) {
+        console.error('Erro ao buscar dados da página de administração:', err);
+      }
+    };
+
+    getAdminPageData();
   }, []);
 
   return (
