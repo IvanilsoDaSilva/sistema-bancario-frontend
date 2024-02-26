@@ -9,7 +9,7 @@ const Index = () => {
       try {
         const response = await AdminPageData();
         if (!response.ok) {
-          throw new Error("Não conseguimos pegar os dados da API");
+          throw new Error("Não conseguimos pegar os dados");
         }
         const data = await response.json();
         setUsers(data);
