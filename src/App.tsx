@@ -1,5 +1,3 @@
-import "./css/App.css";
-
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 
 import Index from "./pages/Index";

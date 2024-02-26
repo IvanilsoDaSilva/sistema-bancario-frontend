@@ -1,162 +1,76 @@
- :root {
-   font-family: Manrope, system-ui, Avenir, Helvetica, Arial, sans-serif;
-   line-height: 1.5;
-   font-weight: 400;
-   box-sizing: border-box;
-   padding: 0px;
-   margin: 0px;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-   color-scheme: light dark;
-   color: rgba(255, 255, 255, 0.87);
-   background-color: #09090B;
+body {
+    @apply font-normal antialiased text-white bg-black box-border m-0;
+    line-height: 1.5;
+    min-width: 320px;
+    min-height: 100vh;
+    display: flex;
+    place-items: center;
+    justify-content: center;
+  }
 
-   font-synthesis: none;
-   text-rendering: optimizeLegibility;
-   -webkit-font-smoothing: antialiased;
-   -moz-osx-font-smoothing: grayscale;
- }
+  ::placeholder {
+    @apply text-lg font-semibold;
+  }
 
- ::placeholder {
-  font-size: 12px;
-  font-weight: 600;
-  font-family: Manrope, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  form {
+    @apply flex flex-col items-start;
+    font-size: 20px;
+    margin-bottom: 2vh;
+  }
 
-}
+  form input {
+    @apply outline-none border-none h-12 w-96 rounded-lg px-3 transition duration-100 border-solid border-gray-800;
+  }
 
- body {
-   margin: 0;
-   display: flex;
-   place-items: center;
-   align-items: center;
-   justify-content: center;
-   min-width: 320px;
-   min-height: 100vh;
- }
+  form label {
+    @apply h-6 w-72 text-sm leading-6 mt-2;
+  }
 
- ol {
-   margin: 0px 0px 20px 0px;
-   padding: 0px;
+  form input:focus {
+    @apply border-solid border-2 border-indigo-600;
+  }
 
-   ul {
-     margin: 0;
-     padding: 0px;
-   }
- }
+  form input:focus::placeholder {
+    @apply text-indigo-600;
+  }
 
- form {
-   display: grid;
-   font-size: 20px;
-   margin: 0 0 2vh 0;
+  table {
+    @apply w-full border-collapse;
+    font-family: Arial, Helvetica, sans-serif;
+  }
 
-   input {
-     outline: unset;
-     border: none;
-     height: 30px;
-     width: 426px;
-     border-radius: 5px;
-     padding: 8px;
-     transition: .1s;
-     border: 1px solid rgb(48, 45, 45);
-   }
+  table td, table th {
+    @apply p-2;
+  }
 
-   label {
-     height: 24px;
-     width: 231px;
-     font-size: 16px;
-     line-height: 24px;
-     margin: 10px 0px 2px 0px;
-   }
+  table tr:nth-child(even) {
+    @apply bg-gray-800;
+  }
 
-   :focus {
-     border: 1px #646cff solid;
-     outline: none;
-   }
+  table th {
+    @apply p-3 text-left bg-indigo-600 text-white;
+  }
 
-   :focus::placeholder {
-     color: #646cff;
-   }
- }
+  a {
+    @apply font-medium text-white no-underline;
+  }
 
- a {
-   font-weight: 500;
-   color: #ffffff;
-   text-decoration: inherit;
- }
+  a:hover {
+    @apply text-indigo-400;
+  }
 
- a:hover {
-   color: #535bf2;
- }
+  button {
+    @apply mt-5 py-3 px-6 rounded-lg border-none text-white font-medium bg-gray-700 hover:border-gray-500 focus:border-gray-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-gray-500;
+  }
 
- h1 {
-   font-size: 3.2em;
-   line-height: 1.1;
- }
+  .logout {
+    @apply ml-1;
+  }
 
- button {
-   margin-top: 20px;
-   color: #fafafa;
-   border-radius: 8px;
-   border: 1px solid transparent;
-   padding: 0.6em 1.2em;
-   font-size: 1em;
-   font-weight: 500;
-   font-family: inherit;
-   background-color: #27272A;
-   cursor: pointer;
-   transition: border-color 0.25s;
-
- }
-
- .logout {
-   margin-left: 5px;
- }
-
- button:hover {
-   border-color: #646cff;
- }
-
- button:focus,
- button:focus-visible {
-   outline: 4px auto -webkit-focus-ring-color;
- }
-
- select {
-   outline: none;
-   border: none;
-   height: 39px;
-   border-radius: 4px;
-   cursor: pointer;
-   padding: 0px 0px 0px 5px;
-
-   option {
-     position: relative;
-     height: 4rem;
-     padding: 1rem;
-     font-size: 14px;
-     display: flex;
-     align-items: center;
-     cursor: pointer;
-     transition: background-color .3s;
-     opacity: 1;
-   }
- }
-
- table {
-  font-family: Arial, Helvetica, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-}
-
-table td, table th {
-  padding: 8px;
-}
-
-table tr:nth-child(even){background-color: #111111;}
-
-table th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: left;
-  background-color: #4b50b1;
-  color: white;
-}
+  button:hover {
+    @apply border-gray-500;
+  }
