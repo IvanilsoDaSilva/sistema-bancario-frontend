@@ -1,7 +1,10 @@
 import { useCookies } from "react-cookie";
+import { useNavigate } from "react-router-dom";
 
 const Dashboard = () => {
-  const [cookies] = useCookies(["user"]);
+  const [cookies,,removeCookie] = useCookies(["user"]);
+
+  const navigate = useNavigate();
 
   return (
     <>
@@ -35,6 +38,9 @@ const Dashboard = () => {
         </ul>
         <ul>
           <a href="/account/transfer">Transferir</a>
+        </ul>
+        <ul>
+          <a onClick={() => {removeCookie("user", { path: "/" }); navigate("/account");}}>Sair</a>
         </ul>
       </ol>
     </>

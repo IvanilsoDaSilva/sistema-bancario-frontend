@@ -16,6 +16,7 @@ import LegalPersonAccountCreate from "./pages/Account/LegalPerson/Create";
 import LegalPersonAccountRead from "./pages/Account/LegalPerson/Read";
 
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -55,6 +56,7 @@ function App() {
             element={<LegalPersonAccountRead />}
           />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </>
   );

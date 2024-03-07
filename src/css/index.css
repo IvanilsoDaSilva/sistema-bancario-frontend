@@ -1,8 +1,19 @@
+@import url('./reset.css');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-body {
+.my-section {
+  @apply px-52 py-10;
+  @apply min-w-[600px]
+}
+
+a {
+  @apply hover:cursor-pointer;
+}
+
+/* body {
     @apply font-normal antialiased text-white bg-black box-border m-0;
     line-height: 1.5;
     min-width: 320px;
@@ -73,4 +84,4 @@ body {
 
   button:hover {
     @apply border-gray-500;
-  }
+  } */
