@@ -1,10 +1,18 @@
 const Footer = () => {
   return (
     <footer className="">
-        <div className="bg-gray-900 text-gray-100">
+        <div className="my-section bg-gray-900 text-white">
+        <div className="">
+            <div className="">
+                <span className="block font-bold text-xl">Ivanilso da Silva</span>
+                <span className="block text-xs">Ivanilso da Silva</span>
+                <span className="block text-xs">Micael Gomes</span>
+                <span className="block text-xs">Caike</span>
+            </div>
+        </div>
             
         </div>
-        <div className="bg-gray-700 text-gray-200">
+        <div className="min-w-[400px] md:px-52 px-12 bg-gray-700 text-white">
             <span className="my-auto text-xs">Copyright © N/A. (Lei 9610 de 19/02/1998)</span>
         </div>
     </footer>

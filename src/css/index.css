@@ -5,8 +5,9 @@
 @tailwind utilities;
 
 .my-section {
-  @apply px-52 py-10;
-  @apply min-w-[600px]
+  @apply md:px-52 px-12 py-10;
+  
+  @apply min-w-[400px];
 }
 
 a {
