@@ -1,4 +1,4 @@
-@import url('./reset.css');
+@import url("./reset.css");
 
 @tailwind base;
 @tailwind components;
@@ -6,12 +6,16 @@
 
 .my-section {
   @apply md:px-52 px-12 py-10;
-  
+
   @apply min-w-[400px];
 }
 
 a {
   @apply hover:cursor-pointer;
+}
+
+::selection {
+  @apply bg-primary text-secondary;
 }
 
 /* body {
