@@ -2,13 +2,13 @@ const Footer = () => {
   return (
     <footer className="">
       <div className="my-section bg-gray-900 text-white lg:flex grid grid-cols-1">
-        <div className="w-full space-y-1">
-          <span className="block font-bold text-2xl">Sistema Bancario</span>
-          <div className="flex items-center text-sm">
+        <div className="w-full space-y-1 ">
+          <span className="block font-bold text-2xl lg:text-left text-center">Sistema Bancario</span>
+          <div className="flex items-center lg:justify-start justify-center">
             <div>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5 mr-1 text-secondary"
+                className="h-5 w-5 mr-1 text-secondary lg:block hidden"
                 fill="currentColor"
                 viewBox="0 0 16 16"
               >
@@ -21,11 +21,11 @@ const Footer = () => {
               </span>
             </div>
           </div>
-          <div className="flex items-center text-sm">
+          <div className="flex items-center lg:justify-start justify-center">
             <div>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5 mr-1 text-secondary"
+                className="h-5 w-5 mr-1 text-secondary lg:block hidden"
                 fill="currentColor"
                 viewBox="0 0 16 16"
               >
@@ -34,15 +34,15 @@ const Footer = () => {
             </div>
             <div>
               <span className="block text-sm text-primary">
-                Rua Dr. Siqueira 273, Campos dos Goytacazes, RJ
+                R. Dr. Siqueira 273, Campos dos Goytacazes, RJ
               </span>
             </div>
           </div>
-          <div className="flex items-center text-sm">
+          <div className="flex items-center text-sm lg:justify-start justify-center">
             <div>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5 mr-1 text-secondary"
+                className="h-5 w-5 mr-1 text-secondary lg:block hidden"
                 fill="currentColor"
                 viewBox="0 0 16 16"
               >
@@ -53,17 +53,17 @@ const Footer = () => {
               <a
                 href="https://github.com/ivanilsodasilva"
                 title="O backend"
-                className="hover:underline text-primary"
+                className="hover:underline text-sm text-primary"
               >
                 Ivanilso da Silva
               </a>
             </div>
           </div>
-          <div className="flex items-center text-sm">
+          <div className="flex items-center text-sm lg:justify-start justify-center">
             <div>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5 mr-1 text-secondary"
+                className="h-5 w-5 mr-1 text-secondary lg:block hidden"
                 fill="currentColor"
                 viewBox="0 0 16 16"
               >
@@ -80,11 +80,11 @@ const Footer = () => {
               </a>
             </div>
           </div>
-          <div className="flex items-center text-sm">
+          <div className="flex items-center text-sm lg:justify-start justify-center">
             <div>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5 mr-1 text-secondary"
+                className="h-5 w-5 mr-1 text-secondary lg:block hidden"
                 fill="currentColor"
                 viewBox="0 0 16 16"
               >
@@ -102,7 +102,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="w-full justify-items-center lg:justify-items-start">
+        <div className="w-full lg:justify-start justify-center">
           <div className="flex space-x-3 justify-center lg:justify-end">
             <a
               aria-label="Acessar Facebook"
