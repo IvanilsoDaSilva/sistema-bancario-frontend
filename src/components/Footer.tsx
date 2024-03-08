@@ -103,6 +103,15 @@ const Footer = () => {
           </div>
         </div>
         <div className="w-full lg:justify-start justify-center">
+          <div className="lg:flex lg:justify-end justify-items-center grid grid-cols-1 gap-2 my-2">
+            <a title="Sistema Bancario | Home" href="/"
+                className="lg:w-auto lg:bg-transparent bg-primary w-full flex justify-center hover:underline text-sm lg:text-primary font-bold">Início</a>
+            <a title="Sistema Bancario | Cliente" href="/about"
+                className="lg:w-auto lg:bg-transparent bg-primary w-full flex justify-center hover:underline text-sm lg:text-primary font-bold">Cliente</a>
+            <a title="Sistema Bancario | Administrador" href="/categories/services"
+                className="lg:w-auto lg:bg-transparent bg-primary w-full flex justify-center hover:underline text-sm lg:text-primary font-bold">Administrador</a>
+          </div>
+
           <div className="flex space-x-3 justify-center lg:justify-end">
             <a
               aria-label="Acessar Facebook"
