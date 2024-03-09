@@ -6,7 +6,7 @@ const Header = () => {
   const [cookies] = useCookies(["user"]);
 
   return (
-    <header className="my-section text-secondary bg-primary">
+    <header className="my-section animate-top-down text-secondary bg-primary">
       <div className="flex items-center">
         <div className="flex items-center">
           <span>
@@ -29,18 +29,16 @@ const Header = () => {
 
         <div className="ml-auto">
           <div className="flex items-center">
-            {cookies.user != null ? (
-              <span className="m-1 w-32 hover:underline truncate text-right">
+            <span className="m-1 w-32 hover:underline truncate text-right hover:animate-rotate">
+              {cookies.user != null ? (
                 <a href="/account/dashboard">
                   {cookies.user.name && `${cookies.user.name}`}
                   {cookies.user.companyName && `${cookies.user.companyName}`}
                 </a>
-              </span>
-            ) : (
-              <span className="m-1 w-32 hover:underline truncate text-right">
+              ) : (
                 <a href="/account">Guest User</a>
-              </span>
-            )}
+              )}
+            </span>
             <img
               className="m-1 h-10 w-10 rounded-full"
               src={avatar}

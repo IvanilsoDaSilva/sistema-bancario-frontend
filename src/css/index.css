@@ -4,89 +4,48 @@
 @tailwind components;
 @tailwind utilities;
 
+/* My classes*/
 .my-section {
   @apply 2xl:px-96 lg:px-52 px-12 py-10;
 
   @apply min-w-[400px];
 }
 
+.my-footer-info-content {
+  @apply flex items-center lg:justify-start justify-center;
+}
+
+.my-footer-nav-button {
+  @apply flex w-full lg:w-auto justify-center lg:hover:underline text-sm font-bold;
+  @apply lg:text-primary lg:bg-transparent bg-primary hover:text-primary/50;
+}
+
+.my-footer-social-button {
+  @apply bg-primary text-white py-2 px-2 rounded hover:bg-primary/50 focus:animate-fall hover:animate-rotate;
+}
+
+.my-footer-nav-content {
+  @apply lg:flex lg:justify-end justify-items-center grid grid-cols-1 gap-2 my-2;
+}
+
+.my-footer-social-content {
+  @apply flex space-x-3 justify-center lg:justify-end;
+}
+
+/* Tags */
 a {
   @apply hover:cursor-pointer;
 }
 
+body {
+  @apply h-screen;
+}
+
+body > div#root {
+  @apply flex flex-col h-screen;
+}
+
+/* Actions */
 ::selection {
   @apply bg-primary text-secondary;
 }
-
-/* body {
-    @apply font-normal antialiased text-white bg-black box-border m-0;
-    line-height: 1.5;
-    min-width: 320px;
-    min-height: 100vh;
-    display: flex;
-    place-items: center;
-    justify-content: center;
-  }
-
-  ::placeholder {
-    @apply text-lg font-semibold;
-  }
-
-  form {
-    @apply flex flex-col items-start;
-    font-size: 20px;
-    margin-bottom: 2vh;
-  }
-
-  form input {
-    @apply outline-none border-none h-12 w-96 rounded-lg px-3 transition duration-100 border-solid border-gray-800;
-  }
-
-  form label {
-    @apply h-6 w-72 text-sm leading-6 mt-2;
-  }
-
-  form input:focus {
-    @apply border-solid border-2 border-indigo-600;
-  }
-
-  form input:focus::placeholder {
-    @apply text-indigo-600;
-  }
-
-  table {
-    @apply w-full border-collapse;
-    font-family: Arial, Helvetica, sans-serif;
-  }
-
-  table td, table th {
-    @apply p-2;
-  }
-
-  table tr:nth-child(even) {
-    @apply bg-gray-800;
-  }
-
-  table th {
-    @apply p-3 text-left bg-indigo-600 text-white;
-  }
-
-  a {
-    @apply font-medium text-white no-underline;
-  }
-
-  a:hover {
-    @apply text-indigo-400;
-  }
-
-  button {
-    @apply mt-5 py-3 px-6 rounded-lg border-none text-white font-medium bg-gray-700 hover:border-gray-500 focus:border-gray-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-gray-500;
-  }
-
-  .logout {
-    @apply ml-1;
-  }
-
-  button:hover {
-    @apply border-gray-500;
-  } */

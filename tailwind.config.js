@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-const colors = require('tailwindcss/colors')
+const colors = require("tailwindcss/colors");
 
 export default {
   content: [
@@ -10,11 +10,44 @@ export default {
   theme: {
     extend: {
       colors: {
-        "primary": "#FF00FF",
-        "secondary": "#FFFFFF",
+        primary: "#FF00FF",
+        secondary: "#FFFFFF",
+        tertiary: "#111827",
+        quarter: "#374151",
+      },
+      backgroundImage: {
+        admin: "url('/src/assets/admin-banner.png')",
+        client: "url('/src/assets/client-banner.png')",
+      },
+      keyframes: {
+        fall: {
+          "0%": { transform: "rotate(0deg) translateY(0px)" },
+          "4%": { transform: "rotate(20deg) translateY(10px)" },
+
+          "100%": { transform: " translateY(500px)" },
+        },
+        rotate: {
+          "0%": { transform: "rotate(-5deg)" },
+
+          "100%": { transform: "rotate(-5deg)" },
+        },
+        "top-down": {
+          "0%": { transform: "translateY(-100px)" },
+
+          "100%": { transform: "translateY(0px)" },
+        },
+        "down-top": {
+          "0%": { transform: "translateY(100px)" },
+          "100%": { transform: "translateY(0px)" },
+        },
+      },
+      animation: {
+        fall: "fall 3s linear",
+        rotate: "rotate 0.1s linear infinite",
+        "top-down": "top-down 0.5s linear",
+        "down-top": "down-top 0.5s linear",
       },
     },
   },
   plugins: [],
-}
-
+};
