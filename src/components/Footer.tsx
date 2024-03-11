@@ -55,7 +55,7 @@ const Footer = () => {
               <a
                 href="https://github.com/ivanilsodasilva"
                 title="O backend"
-                className="hover:underline text-sm text-primary hover:text-primary/50"
+                className="my-link"
               >
                 Ivanilso da Silva
               </a>
@@ -76,7 +76,7 @@ const Footer = () => {
               <a
                 href="https://github.com/micaelgomestavares"
                 title="O frontend"
-                className="hover:underline text-primary hover:text-primary/50"
+                className="my-link"
               >
                 Micael Gomes
               </a>
@@ -97,7 +97,7 @@ const Footer = () => {
               <a
                 href="#"
                 title="O vagabundo"
-                className="hover:underline text-primary hover:text-primary/50"
+                className="my-link"
               >
                 Caike Lobo
               </a>

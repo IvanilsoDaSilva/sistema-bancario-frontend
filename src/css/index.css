@@ -11,6 +11,10 @@
   @apply min-w-[400px];
 }
 
+.my-page {
+  @apply flex-grow my-section;
+}
+
 .my-footer-info-content {
   @apply flex items-center lg:justify-start justify-center;
 }
@@ -38,6 +42,22 @@
 
 .my-index-select-button-title {
   @apply bg-primary/50 text-secondary text-center font-bold;
+}
+
+.my-label {
+ @apply text-sm text-primary;
+}
+
+.my-input {
+  @apply border-primary border-solid border-2 rounded ring-primary;
+}
+
+.my-button {
+  @apply bg-primary hover:bg-primary/50 rounded text-secondary px-3 py-1 focus:animate-scale;
+}
+
+.my-link {
+  @apply hover:underline text-sm text-primary hover:text-primary/50
 }
 
 /* Tags */

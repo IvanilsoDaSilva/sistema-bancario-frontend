@@ -1,15 +1,11 @@
 const Index = () => {
   return (
-    <>
-      <div className="flex-grow min-h-[200px] flex space-x-2 my-section">
-        {/* <ol>
-          <ul>
-            <a href="/account">Área do cliente</a>
-          </ul>
-          <ul>
-            <a href="/admin">Área do administrador</a>
-          </ul>
-        </ol> */}
+    <div className="flex flex-col min-h-[200px] space-y-5 my-page">
+      <div className="flex items-center space-x-1">
+        <span className="text-primary">/</span>
+        <a href="/" className="my-link">Home </a>
+      </div>
+      <div className="flex space-x-2 h-full h-min-[200px]">
         <a
           href="/admin"
           className="bg-admin my-index-select-button"
@@ -26,7 +22,7 @@ const Index = () => {
           <div className="my-index-select-button-title">client</div>
         </a>
       </div>
-    </>
+    </div>
   );
 };
 
