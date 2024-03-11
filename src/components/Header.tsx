@@ -21,7 +21,7 @@ const Header = () => {
             </svg>
           </span>
           <a href="/">
-            <h1 className="ml-2 text-3xl font-bold hover:underline">
+            <h1 className="ml-2 text-3xl font-bold hover:underline hover:text-secondary/80">
               Sistema Bancario
             </h1>
           </a>
@@ -29,7 +29,7 @@ const Header = () => {
 
         <div className="ml-auto">
           <div className="flex items-center">
-            <span className="m-1 w-32 hover:underline truncate text-right hover:animate-rotate">
+            <span className="m-1 w-32 hover:underline truncate text-right hover:animate-rotate-z hover:text-secondary/80">
               {cookies.user != null ? (
                 <a href="/account/dashboard">
                   {cookies.user.name && `${cookies.user.name}`}

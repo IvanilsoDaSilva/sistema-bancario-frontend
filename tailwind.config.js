@@ -26,10 +26,15 @@ export default {
 
           "100%": { transform: " translateY(500px)" },
         },
-        rotate: {
-          "0%": { transform: "rotate(-5deg)" },
+        "rotate-z": {
+          "0%": { transform: "rotate(-10deg)" },
 
-          "100%": { transform: "rotate(-5deg)" },
+          "100%": { transform: "rotate(-10deg)" },
+        },
+        "scale": {
+          "0%": { transform: "scale(1.10)" },
+
+          "100%": { transform: "scale(1.10)" },
         },
         "top-down": {
           "0%": { transform: "translateY(-100px)" },
@@ -43,7 +48,8 @@ export default {
       },
       animation: {
         fall: "fall 3s linear",
-        rotate: "rotate 0.1s linear infinite",
+        "rotate-z": "rotate-z 0.1s linear infinite",
+        "scale": "scale 0.1s linear infinite",
         "top-down": "top-down 0.5s linear",
         "down-top": "down-top 0.5s linear",
       },

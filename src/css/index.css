@@ -17,11 +17,11 @@
 
 .my-footer-nav-button {
   @apply flex w-full lg:w-auto justify-center lg:hover:underline text-sm font-bold;
-  @apply lg:text-primary lg:bg-transparent bg-primary hover:text-primary/50;
+  @apply bg-primary hover:bg-primary/50 lg:bg-transparent hover:lg:bg-transparent text-secondary lg:text-primary hover:lg:text-primary/50;
 }
 
 .my-footer-social-button {
-  @apply bg-primary text-white py-2 px-2 rounded hover:bg-primary/50 focus:animate-fall hover:animate-rotate;
+  @apply bg-primary text-white py-2 px-2 rounded hover:bg-primary/50 focus:animate-fall hover:animate-rotate-z;
 }
 
 .my-footer-nav-content {
@@ -30,6 +30,14 @@
 
 .my-footer-social-content {
   @apply flex space-x-3 justify-center lg:justify-end;
+}
+
+.my-index-select-button{
+  @apply bg-cover bg-center flex-grow hover:animate-scale hover:shadow-black shadow-transparent shadow-xl;
+}
+
+.my-index-select-button-title {
+  @apply bg-primary/50 text-secondary text-center font-bold;
 }
 
 /* Tags */

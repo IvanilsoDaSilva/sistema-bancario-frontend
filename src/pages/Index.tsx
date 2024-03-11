@@ -11,19 +11,19 @@ const Index = () => {
           </ul>
         </ol> */}
         <a
-          href="/account"
-          className="bg-admin bg-cover bg-center flex-grow hover:w-1/3"
+          href="/admin"
+          className="bg-admin my-index-select-button"
         >
-          <div className="">
-            <div className="bg-tertiary/50 text-secondary">admin</div>
+          <div>
+            <div className="my-index-select-button-title">admin</div>
           </div>
         </a>
 
         <a
-          href="/admin"
-          className="bg-client bg-cover bg-center flex-grow hover:w-1/3"
+          href="/account"
+          className="bg-client my-index-select-button"
         >
-          <div className="bg-tertiary/50 text-secondary">client</div>
+          <div className="my-index-select-button-title">client</div>
         </a>
       </div>
     </>
