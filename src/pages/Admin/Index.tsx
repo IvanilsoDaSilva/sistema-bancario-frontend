@@ -22,15 +22,20 @@ const Index = () => {
   }, []);
 
   return (
-    <>
-      <ol>
-        <ul>
-          <a href="/">Voltar</a>
-        </ul>
-      </ol>
+    <div className="flex flex-col space-y-5 min-h-fit my-page">
+      <div className="flex items-center space-x-1">
+        <span className="text-primary">/</span>
+        <a href="/" className="my-link">
+          Home
+        </a>
+        <span className="text-primary">/</span>
+        <a href="/admin" className="my-link">
+          Admin
+        </a>
+      </div>
 
-      <table>
-        <thead>
+      <table className=":">
+        <thead className="bg-primary text-secondary">
           <tr>
             <th>ID</th>
             <th>Agência</th>
@@ -41,7 +46,7 @@ const Index = () => {
         </thead>
         <tbody>
           {users.map((user) => (
-            <tr key={user.id}>
+            <tr key={user.id} className="odd:bg-primary/15">
               <td>{user.id}</td>
               <td>{user.agencyCode}</td>
               <td>{user.balance}</td>
@@ -60,7 +65,7 @@ const Index = () => {
           ))}
         </tbody>
       </table>
-    </>
+    </div>
   );
 };
 
