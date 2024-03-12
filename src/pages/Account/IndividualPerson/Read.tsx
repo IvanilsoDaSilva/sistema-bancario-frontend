@@ -14,7 +14,7 @@ const Read = () => {
           <a href="/account/individual-person/read" className="my-link">Read</a>
         </div>
 
-        <div className="bg-primary py-10 rounded space-y-5">
+        <div className="bg-primary py-10 rounded space-y-5 animate-left-right-50">
           <div className="px-10">
             <span className="flex flex-col text-secondary font-bold">
               Nome: {state.name}

@@ -46,23 +46,28 @@ const Index = () => {
           <a href="/account" className="my-link">Account </a>
         </div>
 
-        <InputField
-          label="Numero da conta"
-          type="text"
-          name="number"
-          value={number as string}
-          onChange={(e: any) => setNumber(e.target.value)}
-          required
-        />
-
-        <InputField
-          label="Senha"
-          type="password"
-          name="password"
-          value={password as string}
-          onChange={(e: any) => setPassword(e.target.value)}
-          required
-        />
+        <div className="animate-left-right-100">
+          <InputField
+            label="Numero da conta"
+            type="text"
+            name="number"
+            value={number as string}
+            onChange={(e: any) => setNumber(e.target.value)}
+            required
+          />
+        </div>
+        
+        <div className="animate-left-right-200">
+          <InputField
+            label="Senha"
+            type="password"
+            name="password"
+            value={password as string}
+            onChange={(e: any) => setPassword(e.target.value)}
+            required
+          />
+        </div>
+        
         
         <div className="flex space-x-1">
           <button type="submit" className="my-button">Enviar</button>
