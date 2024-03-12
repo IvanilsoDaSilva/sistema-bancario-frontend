@@ -1,4 +1,16 @@
+import { useEffect } from "react";
+import audio from "./../assets/muryokusho.mp3";
+
 const Index = () => {
+
+  function play(){
+    new Audio(audio).play();
+  }
+
+  useEffect(() => {
+    play()
+  }, []);
+
   return (
     <div className="flex flex-col min-h-[200px] space-y-5 my-page">
       <div className="flex items-center space-x-1">
@@ -21,8 +33,6 @@ const Index = () => {
             <div className="my-home-select-button-title">client</div>
           </a>
         </div>
-
-        
       </div>
     </div>
   );
