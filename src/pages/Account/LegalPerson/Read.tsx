@@ -32,10 +32,10 @@ const Read = () => {
         <div className="bg-primary py-10 rounded space-y-5 animate-left-right-50">
           <div className="px-10">
             <span className="flex flex-col text-secondary font-bold">
-              Razão Social: {state.name}
+              Razão Social: {state.companyName}
             </span>
             <span className="flex flex-col text-secondary font-bold">
-              CNPJ: {state.cpf}
+              CNPJ: {state.cnpj}
             </span>
             <span className="flex flex-col text-secondary font-bold">
               Numero da conta: {state.number}

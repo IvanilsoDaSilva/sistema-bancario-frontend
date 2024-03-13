@@ -29,36 +29,6 @@ const Transfer = () => {
     }
   };
   return (
-    // <>
-    //   <p>{httpStatus}</p>
-    //   <ol>
-    //     <ul>
-    //       <a href="/account/dashboard">Voltar</a>
-    //     </ul>
-    //   </ol>
-    //   <form method="POST" onSubmit={handle}>
-
-    //     <label htmlFor="account">Conta: </label>
-    //     <InputField
-    //       type="string"
-    //       name="account"
-    //       value={account as String}
-    //       onChange={(e: any) => setAccount(e.target.value as String)}
-    //       required
-    //     />
-
-    //     <label htmlFor="balance">Valor: </label>
-    //     <InputField
-    //       type="number"
-    //       name="balance"
-    //       value={balance as number}
-    //       onChange={(e: any) => setBalance(e.target.value as unknown as number)}
-    //       required
-    //     />
-
-    //     <button type="submit">Enviar</button>
-    //   </form>
-    // </>
     <div className="min-h-fit my-page">
       <p>{httpStatus}</p>
       <form method="POST" onSubmit={handle} className="flex flex-col space-y-5">

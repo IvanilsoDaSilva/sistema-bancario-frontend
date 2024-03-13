@@ -38,7 +38,7 @@ const Index = () => {
         <thead className="bg-primary text-secondary">
           <tr>
             <th>ID</th>
-            <th>Agência</th>
+            <th>Conta</th>
             <th>Saldo</th>
             <th>Nome</th>
             <th>Documento</th>
@@ -48,7 +48,7 @@ const Index = () => {
           {users.map((user) => (
             <tr key={user.id} className="odd:bg-primary/15">
               <td>{user.id}</td>
-              <td>{user.agencyCode}</td>
+              <td>{user.number}</td>
               <td>{user.balance}</td>
               {user.legalPersonId != null ? (
                 <>
