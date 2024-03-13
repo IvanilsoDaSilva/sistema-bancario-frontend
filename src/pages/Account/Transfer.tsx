@@ -83,7 +83,7 @@ const Transfer = () => {
 
         <InputField
           label="Numero da conta"
-          type="string"
+          type="text"
           name="account"
           value={account as string}
           onChange={(e: any) => setAccount(e.target.value as string)}
