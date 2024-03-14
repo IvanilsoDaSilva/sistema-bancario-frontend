@@ -1,4 +1,4 @@
-import error from "./../assets/img/404.png";
+import error from "./../assets/img/error.png";
 
 const Index = () => {
   return (
