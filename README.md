@@ -14,11 +14,11 @@
 
 <h2 align="right">1.1. INTRODUCTION 📰</h2>
 
-Welcome to Java Banking, a project developed with the purpose of providing a hands-on and educational experience for those who wish to learn Java and object-oriented programming.
+Bem-vindo ao repositório sistema-bancario-frontend, um projeto desenvolvido durante minha faculdade visando proporcionar a mim e outros colegas uma experiência prática e educacional no uso de react e outros recursos.
 
 <h2 align="right">1.2. DESCRIPTION 📝</h2>
 
-This project is intended to provide a solid foundation for anyone just starting to learn Java and object-oriented programming. Feel free to contribute, adapt, and expand as your learning journey progresses. Happy exploring and coding!
+Este repositório mantém o frontend do sistema que funciona junto a um [backend](https://github.com/IvanilsoDaSilva/sistema-bancario-backend) separado. Essa parte se trata do frontend e foi utilizada pela materia de Interação Humano-Máquina com meu grupo @[Caike](https://github.com/CaikeLobo).
 
 <h2 align="right">1.3. TECHNOLOGIES 💻</h2>
 
