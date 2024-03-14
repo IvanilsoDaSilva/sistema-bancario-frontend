@@ -16,8 +16,8 @@ export default {
         quarter: "#374151",
       },
       backgroundImage: {
-        admin: "url('/src/assets/admin-banner.png')",
-        client: "url('/src/assets/client-banner.png')",
+        admin: "url('/src/assets/img/admin-banner.png')",
+        client: "url('/src/assets/img/client-banner.png')",
       },
       keyframes: {
         fall: {

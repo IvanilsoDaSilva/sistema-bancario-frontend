@@ -1,6 +1,6 @@
 import { useCookies } from "react-cookie";
 
-import avatar from "./../assets/guest.png";
+import guest from "./../assets/img/guest.png";
 
 const Header = () => {
   const [cookies] = useCookies(["user"]);
@@ -41,7 +41,7 @@ const Header = () => {
             </span>
             <img
               className="m-1 h-10 w-10 rounded-full"
-              src={avatar}
+              src={guest}
               alt="Profile image"
             />
           </div>

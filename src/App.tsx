@@ -1,6 +1,7 @@
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 
 import Index from "./pages/Index";
+import NotFound from "./pages/NotFound";
 import Account from "./pages/Account/Index";
 import Deposit from "./pages/Account/Deposit";
 import Withdraw from "./pages/Account/Withdraw";
@@ -55,6 +56,7 @@ function App() {
             path="/account/legal-person/read"
             element={<LegalPersonAccountRead />}
           />
+          <Route path='*' element={ <NotFound /> } />
         </Routes>
         <Footer />
       </BrowserRouter>

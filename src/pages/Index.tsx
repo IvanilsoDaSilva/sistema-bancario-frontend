@@ -1,8 +1,7 @@
 import { useEffect } from "react";
-import audio from "./../assets/muryokusho.mp3";
+import audio from "./../assets/audio/muryokusho.mp3";
 
 const Index = () => {
-
   function play(){
     new Audio(audio).play();
   }
