@@ -4,7 +4,7 @@ const Footer = () => {
       <div className="my-section bg-tertiary text-white lg:flex grid grid-cols-1 overflow-hidden">
         <div className="w-full space-y-1 text-primary">
           <span className="block font-bold text-2xl lg:text-left text-center text-secondary">
-            Sistema Bancario
+            Fradesco
           </span>
           <div className="my-footer-info-content">
             <div>
