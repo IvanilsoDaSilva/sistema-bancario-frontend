@@ -22,7 +22,7 @@
 }
 
 .my-input {
-  @apply border-primary border-solid border-2 rounded ring-primary;
+  @apply border-primary border-solid border-2 rounded ring-primary h-full;
 }
 
 .my-button {
